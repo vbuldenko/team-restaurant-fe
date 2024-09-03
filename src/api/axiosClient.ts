@@ -19,20 +19,20 @@ function onRequest(request: InternalAxiosRequestConfig<any>) {
   return request;
 }
 
-// let isRefreshing = false;
-// let failedQueue: Array<(token: string | null, error?: AxiosError) => void> = [];
+let isRefreshing = false;
+let failedQueue: Array<(token: string | null, error?: AxiosError) => void> = [];
 
-// // Function to handle the queued requests when a token refresh completes
-// const processQueue = (error: AxiosError | null, token: string | null) => {
-//   failedQueue.forEach((callback) => {
-//     if (error) {
-//       callback(null, error);
-//     } else {
-//       callback(token);
-//     }
-//   });
-//   failedQueue = [];
-// };
+// Function to handle the queued requests when a token refresh completes
+const processQueue = (error: AxiosError | null, token: string | null) => {
+  failedQueue.forEach((callback) => {
+    if (error) {
+      callback(null, error);
+    } else {
+      callback(token);
+    }
+  });
+  failedQueue = [];
+};
 
 function onResponseSuccess(response: AxiosResponse) {
   return response.data;
@@ -47,35 +47,35 @@ async function onResponseError(error: AxiosError): Promise<any> {
     return Promise.reject(error);
   }
 
-  // if (isRefreshing) {
-  //   // Return a promise that resolves/rejects when the token refresh completes
-  //   return new Promise((resolve, reject) => {
-  //     failedQueue.push((token, refreshError) => {
-  //       if (refreshError) {
-  //         reject(refreshError); // Reject with the refresh error
-  //       } else if (token) {
-  //         resolve(axiosClient(originalRequest)); // Retry the original request
-  //       } else {
-  //         reject(error); // Reject with the original error if no token
-  //       }
-  //     });
-  //   });
-  // }
+  if (isRefreshing) {
+    // Return a promise that resolves/rejects when the token refresh completes
+    return new Promise((resolve, reject) => {
+      failedQueue.push((token, refreshError) => {
+        if (refreshError) {
+          reject(refreshError); // Reject with the refresh error
+        } else if (token) {
+          resolve(axiosClient(originalRequest)); // Retry the original request
+        } else {
+          reject(error); // Reject with the original error if no token
+        }
+      });
+    });
+  }
 
-  // originalRequest._retry = true;
-  // isRefreshing = true;
+  originalRequest._retry = true;
+  isRefreshing = true;
 
   try {
     const { accessToken } = await authService.refresh();
     accessTokenService.save(accessToken);
 
-    // processQueue(null, accessToken); // Retry all queued requests with the new token
+    processQueue(null, accessToken); // Retry all queued requests with the new token
     return axiosClient.request(originalRequest); // Retry the original request
   } catch (refreshError) {
-    // processQueue(refreshError, null);
+    processQueue(refreshError, null);
     return Promise.reject(refreshError);
   } finally {
-    // isRefreshing = false;
+    isRefreshing = false;
   }
 }
 
