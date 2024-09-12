@@ -1,15 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { accessTokenService } from "../../services/accessTokenService";
+import { checkAuth } from "./authThunk";
+import { RootState } from "../../app/store";
 
 interface AuthState {
   isAuthenticated: boolean;
-  token: string | null;
   loading: boolean;
   error: string | null;
 }
 
 const initialState: AuthState = {
-  isAuthenticated: false,
-  token: null,
+  isAuthenticated: Boolean(accessTokenService.get()),
   loading: false,
   error: null,
 };
@@ -17,27 +18,24 @@ const initialState: AuthState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
-    loginStart: (state) => {
-      state.loading = true;
-      state.error = null;
-    },
-    loginSuccess: (state, action: PayloadAction<string>) => {
-      state.isAuthenticated = true;
-      state.token = action.payload;
-      state.loading = false;
-    },
-    loginFailure: (state, action: PayloadAction<string>) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
-    logout: (state) => {
-      state.isAuthenticated = false;
-      state.token = null;
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(checkAuth.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(checkAuth.fulfilled, (state) => {
+        state.isAuthenticated = true;
+        state.loading = false;
+      })
+      .addCase(checkAuth.rejected, (state) => {
+        state.isAuthenticated = false;
+        state.loading = false;
+      });
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout } =
-  authSlice.actions;
+// export const { logout } = authSlice.actions;
+
+export const selectAuth = (state: RootState) => state.auth;
 export default authSlice.reducer;

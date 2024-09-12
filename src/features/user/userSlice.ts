@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../app/store";
+import { fetchUserData } from "./userThunk";
 
 // Define a type for the slice state
 export interface UserState {
+  loading: boolean;
   firstName: string;
   lastName: string;
   reservations: Array<any>; // Replace `any` with the appropriate type if you have a defined type for reservations
@@ -12,6 +14,7 @@ export interface UserState {
 
 // Define the initial state using that type
 const initialState: UserState = {
+  loading: false,
   firstName: "",
   lastName: "",
   reservations: [],
@@ -64,6 +67,26 @@ export const userSlice = createSlice({
       state.role = "";
       state.dishes = [];
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUserData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchUserData.fulfilled, (state, action) => {
+        const { firstName, lastName, reservations, role, dishes } =
+          action.payload;
+
+        state.firstName = firstName;
+        state.lastName = lastName;
+        state.role = role;
+        state.reservations = reservations;
+        state.dishes = dishes;
+        state.loading = false;
+      })
+      .addCase(fetchUserData.rejected, (state) => {
+        state.loading = false;
+      });
   },
 });
 
