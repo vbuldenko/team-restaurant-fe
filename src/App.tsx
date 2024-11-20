@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
 
-function App() {
-  return <div>Hello!</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <header>
+        <nav>
+          <Link to="/"></Link>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+      <footer>© 2024 Restaurant</footer>
+    </div>
+  );
+};
 
 export default App;
