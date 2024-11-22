@@ -1,4 +1,5 @@
 import { authClient } from "../api/authClient";
+import { LoginReturnData } from "../types/User";
 
 interface AuthCredentials {
   name: string;
@@ -20,7 +21,9 @@ function register(credentials: AuthCredentials) {
   return authClient.post("/registration", credentials);
 }
 
-function login(credentials: Partial<AuthCredentials>) {
+function login(
+  credentials: Partial<AuthCredentials>
+): Promise<LoginReturnData> {
   return authClient.post("/login", credentials);
 }
 
@@ -39,7 +42,7 @@ function logout() {
   return authClient.post("/logout");
 }
 
-function activate(activationToken: string) {
+function activate(activationToken: string): Promise<LoginReturnData> {
   return authClient.get(`/activation/${activationToken}`);
 }
 

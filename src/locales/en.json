@@ -1,0 +1,117 @@
+{
+  "login": {
+    "title": "Log in",
+    "identifierPlaceholder": "Email or Phone Number",
+    "passwordPlaceholder": "Password",
+    "submitButton": "Log in",
+    "register": "Sign up",
+    "forgotPassword": "Forgot password?"
+  },
+  "signup": {
+    "title": "Sign Up",
+    "firstNamePlaceholder": "First Name",
+    "lastNamePlaceholder": "Last Name",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Phone",
+    "passwordPlaceholder": "Password",
+    "submitButton": "Sign Up",
+    "roleQuestion": "What role do you want to sign up for?",
+    "roleClient": "Client",
+    "roleTrainer": "Trainer",
+    "loginQuestion": "Already have an account?",
+    "loginLink": "Log in"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "emailPlaceholder": "Email",
+    "submitButton": "Submit",
+    "successMessage": "A password reset link has been sent to your email.",
+    "errorMessage": "An error occurred"
+  },
+  "nav": {
+    "home": "Home",
+    "reservation": "Reservation",
+    "menu": "Menu",
+    "ourstory": "Our Story",
+    "events": "Events",
+    "contacts": "Contacts",
+    "socials": "Follow Us",
+    "login": "Login"
+  },
+  "home": {
+    "header_values": "Our Values",
+    "values": [
+      {
+        "title": "Health",
+        "description": "We strive for everyone to have a quality and long life filled with energy"
+      },
+      {
+        "title": "Safety",
+        "description": "We explain each exercise and monitor the correct technique"
+      },
+      {
+        "title": "Systematic Approach",
+        "description": "The desired result depends on a systematic approach and discipline. Thanks to this, we form healthy habits"
+      },
+      {
+        "title": "Individuality",
+        "description": "Each person is special. And we take this into account in every training session."
+      },
+      {
+        "title": "Culture",
+        "description": "We believe that respect should be both for oneself and for others"
+      },
+      {
+        "title": "Development and Innovation",
+        "description": "We constantly monitor new trends, add new types of activities, and our trainers continuously improve their qualifications"
+      }
+    ]
+  },
+  "contacts": {
+    "header": "Our Contacts",
+    "phone": "+38(097)-99-999-90",
+    "email": "illicium@gmail.com",
+    "address": "Volodymyra Ivasiuka Ave, 24, Kyiv, 04210",
+    "working_title": "Working Hours",
+    "working_hours": "Mon-Fri: 9:00 AM - 6:00 PM"
+  },
+  "menu": {
+    "overview": "Overview",
+    "settings": "Settings",
+    "users": "Users",
+    "schedule": "Schedule",
+    "purchases": "Purchases"
+  },
+  "clientOverview": {
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "settings": {
+    "general": "App settings",
+    "fontSize": "Font size",
+    "personal": "Personal information",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "logoutButton": "Log Out",
+    "logoutSuccess": "You have been logged out successfully.",
+    "logoutError": "An error occurred while logging out."
+  },
+  "adminDashboard": {
+    "generalStatistics": "General Statistics",
+    "expenses": "Expenses",
+    "totalIncome": "Total Income",
+    "dailyIncome": "Daily Income",
+    "monthlyIncome": "Monthly Income",
+    "dailyProfit": "Daily Profit",
+    "monthlyProfit": "Monthly Profit",
+    "rent": "Rent",
+    "utilities": "Utilities",
+    "taxes": "Taxes",
+    "wages": "Wages"
+  },
+  "search": {
+    "placeholder": "User name..."
+  }
+}

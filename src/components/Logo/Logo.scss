@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  font-size: 1.1rem;
+  color: white;
+  // @include on-desktop {
+  //   padding: 1.125rem 1.5rem;
+  // }
+
+  &__image {
+    width: 30px;
+
+    @include on-desktop {
+      width: 40px;
+    }
+  }
+}

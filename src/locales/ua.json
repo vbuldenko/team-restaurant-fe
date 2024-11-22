@@ -1,0 +1,117 @@
+{
+  "login": {
+    "title": "Увійти",
+    "identifierPlaceholder": "Електронна пошта або номер телефону",
+    "passwordPlaceholder": "Пароль",
+    "submitButton": "Увійти",
+    "register": "Реєстрація",
+    "forgotPassword": "Забули пароль?"
+  },
+  "signup": {
+    "title": "Реєстрація",
+    "firstNamePlaceholder": "Ім'я",
+    "lastNamePlaceholder": "Прізвище",
+    "emailPlaceholder": "Електронна пошта",
+    "phonePlaceholder": "Телефон",
+    "passwordPlaceholder": "Пароль",
+    "roleQuestion": "Тип облікового запису",
+    "roleClient": "Клієнт",
+    "roleTrainer": "Тренер",
+    "submitButton": "Зареєструватися",
+    "loginQuestion": "Вже є створений акаунт?",
+    "login": "Увійти"
+  },
+  "forgotPassword": {
+    "title": "Забули пароль",
+    "emailPlaceholder": "Електронна пошта",
+    "submitButton": "Надіслати",
+    "successMessage": "Посилання для скидання пароля було надіслано на вашу електронну пошту.",
+    "errorMessage": "Сталася помилка"
+  },
+  "nav": {
+    "home": "Головна",
+    "reservation": "Бронювання",
+    "menu": "Меню",
+    "ourstory": "Наша історія",
+    "events": "Події",
+    "contacts": "Контакти",
+    "socials": "Слідкуйте за нами",
+    "login": "Увійти"
+  },
+  "home": {
+    "header_values": "Our Values",
+    "values": [
+      {
+        "title": "Health",
+        "description": "We strive for everyone to have a quality and long life filled with energy"
+      },
+      {
+        "title": "Safety",
+        "description": "We explain each exercise and monitor the correct technique"
+      },
+      {
+        "title": "Systematic Approach",
+        "description": "The desired result depends on a systematic approach and discipline. Thanks to this, we form healthy habits"
+      },
+      {
+        "title": "Individuality",
+        "description": "Each person is special. And we take this into account in every training session."
+      },
+      {
+        "title": "Culture",
+        "description": "We believe that respect should be both for oneself and for others"
+      },
+      {
+        "title": "Development and Innovation",
+        "description": "We constantly monitor new trends, add new types of activities, and our trainers continuously improve their qualifications"
+      }
+    ]
+  },
+  "contacts": {
+    "header": "Наші контакти",
+    "phone": "+38(097)-99-999-90",
+    "email": "illicium@gmail.com",
+    "address": "проспект Володимира Івасюка, 24, Київ, 04210",
+    "working_title": "Графік роботи",
+    "working_hours": "Пн-Пт: 9:00 - 18:00"
+  },
+  "menu": {
+    "overview": "Огляд",
+    "settings": "Налаштування",
+    "users": "Користувачі",
+    "schedule": "Розклад",
+    "purchases": "Покупки"
+  },
+  "clientOverview": {
+    "active": "Активні",
+    "inactive": "Не активовані"
+  },
+  "settings": {
+    "general": "Налаштування додатку",
+    "fontSize": "Розмір шрифту",
+    "personal": "Особиста інформація",
+    "name": "Ім'я",
+    "email": "Пошта",
+    "phone": "Телефон",
+    "password": "Пароль",
+    "logoutButton": "Вийти",
+    "logoutSuccess": "Ви успішно вийшли з системи.",
+    "logoutError": "Сталася помилка під час виходу."
+  },
+  "adminDashboard": {
+    "generalStatistics": "Загальна статистика",
+    "expenses": "Витрати",
+    "totalIncome": "Загальний дохід",
+    "dailyIncome": "Щоденний дохід",
+    "monthlyIncome": "Місячний дохід",
+    "dailyProfit": "Щоденний прибуток",
+    "monthlyProfit": "Місячний прибуток",
+    "rent": "Оренда",
+    "utilities": "Комунальні послуги",
+    "taxes": "Податки",
+    "wages": "Зарплати"
+  },
+  "search": {
+    "placeholder": "Ім'я користувача..."
+  }
+}
