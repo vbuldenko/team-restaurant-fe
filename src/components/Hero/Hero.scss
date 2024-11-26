@@ -49,6 +49,7 @@
     text-transform: lowercase;
 
     & span {
+      width: max-content;
       z-index: 1;
     }
 
