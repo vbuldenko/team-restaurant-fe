@@ -11,6 +11,9 @@
     @include page-grid;
     @include content-padding-inline();
 
+    @include on-tablet {
+      row-gap: 3.125rem;
+    }
     @include on-desktop {
       row-gap: 6.25rem;
     }
@@ -39,26 +42,35 @@
 
     @include page-grid;
 
-    & :nth-child(1) {
-      grid-column: 1/-1;
-      justify-self: center;
+    @include on-tablet {
+      & :nth-child(1) {
+        grid-column: 1/-1;
+        justify-self: center;
+      }
+
+      & :nth-child(2) {
+        grid-column: 6/-1;
+      }
+
+      & :nth-child(3) {
+        grid-column: 1/-1;
+      }
     }
 
-    & :nth-child(2) {
-      grid-column: 11/-1;
+    @include on-desktop {
+      & :nth-child(1) {
+        grid-column: 1/-1;
+        justify-self: center;
+      }
+
+      & :nth-child(2) {
+        grid-column: 11/-1;
+      }
+
+      & :nth-child(3) {
+        grid-column: 1/-1;
+      }
     }
-
-    & :nth-child(3) {
-      grid-column: 1/-1;
-    }
-
-    // @include on-tablet {
-    //   padding-block: 2rem;
-    // }
-
-    // @include on-desktop {
-    //   padding-block: 3.5rem;
-    // }
   }
 
   &__button {
