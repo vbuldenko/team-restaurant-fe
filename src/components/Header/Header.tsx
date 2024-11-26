@@ -25,23 +25,25 @@ export const Header = () => {
   }
 
   return (
-    <header className="header">
-      <div className="header__left">
+    <>
+      <header className="header">
         <MenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Logo />
+
+        <div className="header__right gap-4">
+          <CustomSelect
+            value={lang}
+            options={["ua", "en"]}
+            onChange={handleChangeLanguage}
+          />
+        </div>
+      </header>
+      <aside>
         <Navigation
           className={isMenuOpen ? "mobile" : ""}
           handleClick={closeMobileMenu}
         />
-      </div>
-      <Logo />
-
-      <div className="header__right gap-4">
-        <CustomSelect
-          value={lang}
-          options={["ua", "en"]}
-          onChange={handleChangeLanguage}
-        />
-      </div>
-    </header>
+      </aside>
+    </>
   );
 };

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getLinkClass } from "../../utils";
-import { NavBarLinks } from "../../types/NavBarLinks";
 import { useAppSelector } from "../../app/hooks";
 import { selectAuth } from "../../features/auth/authSlice";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
@@ -14,16 +13,40 @@ type Props = {
   handleClick?: () => void;
 };
 
+export enum NavBarLinks {
+  Home = "/",
+  Reservation = "/reservation",
+  Menu = "/menu",
+  OurStory = "/story",
+  Events = "/events",
+}
+
+const navLinkImages: Record<NavBarLinks, string> = {
+  [NavBarLinks.Home]: "/images/home.png",
+  [NavBarLinks.Reservation]: "/images/reservation.png",
+  [NavBarLinks.Menu]: "/images/menu.png",
+  [NavBarLinks.OurStory]: "/images/story.png",
+  [NavBarLinks.Events]: "/images/events.png",
+};
+
 export const Navigation: React.FC<Props> = ({ className, handleClick }) => {
   const { t } = useTranslation();
   const { isAuthenticated } = useAppSelector(selectAuth);
+  const [activeLink, setActiveLink] = useState<NavBarLinks | null>(null);
 
   return (
     <nav className={className ? `nav ${className}` : "nav"}>
       <ul className="nav__list">
         {Object.entries(NavBarLinks).map(([key, value]) => (
           <li className="nav__item" key={key}>
-            <NavLink to={value} className={getLinkClass} onClick={handleClick}>
+            <NavLink
+              to={value}
+              className={({ isActive }) => {
+                if (isActive) setActiveLink(value as NavBarLinks);
+                return getLinkClass({ isActive });
+              }}
+              onClick={handleClick}
+            >
               {t(`nav.${key.toLowerCase()}`)}
             </NavLink>
           </li>
@@ -50,6 +73,15 @@ export const Navigation: React.FC<Props> = ({ className, handleClick }) => {
           </li>
         )}
       </ul>
+      {activeLink && (
+        <div className="nav__image-container">
+          <img
+            src={navLinkImages[activeLink]}
+            alt={activeLink}
+            className="nav__image"
+          />
+        </div>
+      )}
     </nav>
   );
 };

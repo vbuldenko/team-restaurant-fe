@@ -39,33 +39,12 @@
     "login": "Увійти"
   },
   "home": {
-    "header_values": "Our Values",
-    "values": [
-      {
-        "title": "Health",
-        "description": "We strive for everyone to have a quality and long life filled with energy"
-      },
-      {
-        "title": "Safety",
-        "description": "We explain each exercise and monitor the correct technique"
-      },
-      {
-        "title": "Systematic Approach",
-        "description": "The desired result depends on a systematic approach and discipline. Thanks to this, we form healthy habits"
-      },
-      {
-        "title": "Individuality",
-        "description": "Each person is special. And we take this into account in every training session."
-      },
-      {
-        "title": "Culture",
-        "description": "We believe that respect should be both for oneself and for others"
-      },
-      {
-        "title": "Development and Innovation",
-        "description": "We constantly monitor new trends, add new types of activities, and our trainers continuously improve their qualifications"
-      }
-    ]
+    "hero_titles": {
+      "main": "Illicium",
+      "secondary": "Ресторан",
+      "description": "Італійської кухні"
+    },
+    "hero_button": "Забронювати стіл"
   },
   "contacts": {
     "header": "Наші контакти",

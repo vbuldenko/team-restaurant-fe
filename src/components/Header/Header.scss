@@ -1,15 +1,15 @@
 .header {
-  padding-top: 2.5rem;
-  padding-bottom: 0.5rem;
+  z-index: 2;
   position: fixed;
-  background-color: $color-background-header;
-  z-index: 1;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  background-color: $color-background-main;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // box-shadow: 0 1px 0 0 $card-background;
-  padding-inline: 16px;
+  border-bottom: 1px solid #f5decf;
+  padding-inline: 5rem;
 
   &__left {
     display: flex;

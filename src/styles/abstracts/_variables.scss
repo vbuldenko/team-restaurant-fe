@@ -1,21 +1,30 @@
 $mobile-width: 320px;
 $tablet-width: 640px;
 $desktop-width: 1200px;
-$border-radius: 16 px;
+$border-radius: 16px;
+$border-radius-m: 8px;
+$border-radius-s: 4px;
 $color-background-light: #ffffff;
 $color-background-dark: #0c0c0c;
 $color-background-main: #242426;
 
-$color-background-header: $color-background-main;
-$color-background-footer: $color-background-main;
+$color-primary: #ff6939;
+$color-hover: #d66c00;
+$color-inactive: #f5decf;
+$color-bg-element: #fff3ec;
+$color-bg-error: #fbf3f3; //backgroound error
+$color-decorative-1: #321d0b;
+$color-decorative-2: #d1af92;
+$color-white: white;
+$color-gray-1: #f2f2f7; //Button for light
+$color-gray-2: #e7e7e8; //Body text
+$color-gray-3: #c7c7cc; //Secondary text
+$color-gray-4: #8e8e93; //Secondary text 2
+$color-gray-5: #636366; //Strokes
+$color-gray-6: #3a3a3c; //Separate backgroound
 
-$color-accent: #216cff;
-$color-secondary-accent: #f447af;
-$color-primary: #0f0f11;
-$color-secondary: #89939a;
-$color-icons: #b4bdc3;
-$color-hoverBG: #fafbfc;
-$color-white: #fff;
-$color-green: #27ae60;
-$color-red: #eb5757;
+$color-error: #bb2525;
+$color-info: #3365cf;
+$color-warning: #fdb500;
+$color-success: #0c5b1b;
 $duration: 0.3s;

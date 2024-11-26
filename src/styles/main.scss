@@ -21,3 +21,7 @@
 html {
   font-size: var(--root-font-size);
 }
+
+main {
+  // @include content-padding-inline();
+}
