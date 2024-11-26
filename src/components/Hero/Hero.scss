@@ -2,6 +2,9 @@
   width: 100%;
   height: 100vh;
   background-color: $color-background-dark;
+  background-image: url("images/hero_bg.png");
+  background-size: cover;
+  background-position: center;
   color: $color-white;
   display: flex;
   flex-direction: column;
