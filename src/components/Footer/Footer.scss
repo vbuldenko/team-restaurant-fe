@@ -1,6 +1,7 @@
 .footer {
-  background-color: $color-background-footer;
-  padding: 32px 0;
+  background-color: $color-background-main;
+  padding-block: 80px 40px;
+  color: $color-white;
 
   &__content {
     display: flex;
@@ -9,7 +10,7 @@
 
     @include on-tablet {
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
     }
   }
@@ -18,20 +19,38 @@
     padding: 0;
   }
 
-  &__list {
-    gap: 16px;
-    align-items: flex-start;
-    justify-content: space-around;
-    flex: 0.5;
+  &__nav-title {
+    font-size: 1.25rem;
+  }
 
-    @include on-desktop {
-      gap: 106px;
+  &__nav-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    // @include on-desktop {
+    //   gap: 106px;
+    // }
+  }
+
+  &__nav-item {
+    display: flex;
+
+    & .nav__link {
+      font-size: 1rem;
     }
   }
 
+  &__socials {
+    display: flex;
+    gap: 16px;
+  }
+
   &__button {
-    align-self: center;
-    font-family: Mont, Arial, sans-serif;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
     font-weight: 700;
     border: none;
     display: flex;
@@ -39,7 +58,7 @@
     gap: 16px;
     align-items: center;
     background-color: inherit;
-    color: $color-secondary;
+    // color: $color-secondary;
     cursor: pointer;
 
     @include hover(color, $color-primary);
@@ -50,7 +69,7 @@
       align-items: center;
       min-width: 30px;
       height: 30px;
-      border: 1px solid $color-icons;
+      border: 1px solid $color-white;
       border-radius: 50%;
 
       @include hover(border-color, $color-primary);

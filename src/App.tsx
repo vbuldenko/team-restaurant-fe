@@ -9,7 +9,7 @@ const App = () => {
       <main className="py-20">
         <Outlet />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

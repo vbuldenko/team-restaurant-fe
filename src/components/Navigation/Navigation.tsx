@@ -7,19 +7,12 @@ import { UserCircleIcon } from "@heroicons/react/24/outline";
 import { Path } from "../../types/Path";
 import { useTranslation } from "react-i18next";
 import "./Navigation.scss";
+import { NavBarLinks } from "../../types/NavBarLinks";
 
 type Props = {
   className?: string;
   handleClick?: () => void;
 };
-
-export enum NavBarLinks {
-  Home = "/",
-  Reservation = "/reservation",
-  Menu = "/menu",
-  OurStory = "/story",
-  Events = "/events",
-}
 
 const navLinkImages: Record<NavBarLinks, string> = {
   [NavBarLinks.Home]: "/images/home.png",

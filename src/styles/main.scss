@@ -25,3 +25,7 @@ html {
 main {
   // @include content-padding-inline();
 }
+
+.container {
+  @include content-padding-inline();
+}

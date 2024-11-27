@@ -1,4 +1,7 @@
 {
+  "gen": {
+    "info": "Information"
+  },
   "login": {
     "title": "Log in",
     "identifierPlaceholder": "Email or Phone Number",
@@ -47,12 +50,13 @@
     "hero_button": "Reserve a table"
   },
   "contacts": {
-    "header": "Our Contacts",
+    "title": "Contacts",
     "phone": "+38(097)-99-999-90",
     "email": "illicium@gmail.com",
-    "address": "Volodymyra Ivasiuka Ave, 24, Kyiv, 04210",
+    "address": "Volodymyra Ivasiuka Ave, 40, Kyiv, 04210",
     "working_title": "Working Hours",
-    "working_hours": "Mon-Fri: 9:00 AM - 6:00 PM"
+    "working_hours": "Mon-Fri: 9:00 AM - 6:00 PM",
+    "followus": "Follow us"
   },
   "menu": {
     "overview": "Overview",
