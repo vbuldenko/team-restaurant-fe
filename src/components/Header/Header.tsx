@@ -5,11 +5,18 @@ import { Navigation } from "../Navigation";
 import CustomSelect from "../CustomSelect";
 import { MenuButton } from "../MenuButton";
 import "./Header.scss";
+import { useAppSelector } from "../../app/hooks";
+import { selectAuth } from "../../features/auth/authSlice";
+import { Path } from "../../types/Path";
+import { UserCircleIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [lang, setLang] = useState<"ua" | "en">("ua");
+  const [lang, setLang] = useState<"ua" | "en">("en");
+  const { isAuthenticated } = useAppSelector(selectAuth);
+  const { t } = useTranslation();
 
   const closeMobileMenu = () => {
     setIsMenuOpen(false);
@@ -27,20 +34,32 @@ export const Header = () => {
   return (
     <>
       <header className="header">
-        <MenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        <Logo />
+        <div className="container flex items-center justify-between">
+          <MenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          <Logo />
 
-        <div className="header__right gap-4">
-          <CustomSelect
-            value={lang}
-            options={["ua", "en"]}
-            onChange={handleChangeLanguage}
-          />
+          <div className="header__right gap-4">
+            <CustomSelect
+              value={lang}
+              options={["ua", "en"]}
+              onChange={handleChangeLanguage}
+            />
+
+            {isAuthenticated ? (
+              <Link to={Path.Account}>
+                <UserCircleIcon className="h-6 w-6" />
+              </Link>
+            ) : (
+              <Link to={Path.Login} className="header__login">
+                {t("nav.login")}
+              </Link>
+            )}
+          </div>
         </div>
       </header>
       <aside>
         <Navigation
-          className={isMenuOpen ? "mobile" : ""}
+          className={isMenuOpen ? "open" : ""}
           handleClick={closeMobileMenu}
         />
       </aside>

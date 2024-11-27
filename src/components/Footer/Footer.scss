@@ -39,6 +39,9 @@
 
     & .nav__link {
       font-size: 1rem;
+      &::before {
+        display: none;
+      }
     }
   }
 
