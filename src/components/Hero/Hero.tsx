@@ -7,7 +7,7 @@ export const Hero = () => {
     <div className="hero">
       <div className="hero__content">
         <div className="hero__text">
-          <span className="hero__name">{t("home.hero_titles.main")}</span>
+          <span>{t("home.hero_titles.main")}</span>
           <span>{t("home.hero_titles.secondary")}</span>
           <span>{t("home.hero_titles.description")}</span>
         </div>

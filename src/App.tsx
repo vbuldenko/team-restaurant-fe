@@ -6,7 +6,8 @@ const App = () => {
   return (
     <div>
       <Header />
-      <main className="py-20">
+      {/* <main className="py-20"> */}
+      <main>
         <Outlet />
       </main>
       <Footer />

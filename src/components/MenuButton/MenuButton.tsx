@@ -7,16 +7,18 @@ type Props = {
 
 export const MenuButton: React.FC<Props> = ({ isMenuOpen, toggleMenu }) => {
   return (
-    <div className="flex gap-3 text-white">
-      <button
-        className={`burger-menu ${isMenuOpen ? "open" : ""}`}
-        onClick={toggleMenu}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      MENU
-    </div>
+    // <div className="flex gap-3 text-white">
+    <button
+      className={`burger-menu ${isMenuOpen ? "open" : ""}`}
+      onClick={toggleMenu}
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   );
+  {
+    /* MENU
+    </div> */
+  }
 };
