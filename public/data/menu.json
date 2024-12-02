@@ -10,7 +10,7 @@
     "calories": 300,
     "weight": 400,
     "available": true,
-    "image_url": "/images/margherita-pizza.jpg",
+    "image_url": "/images/menu/breakfast.jpg",
     "preparation_time": 15,
     "likes": 150,
     "suggestions": [14, 15, 16]
@@ -26,7 +26,7 @@
     "calories": 450,
     "weight": 350,
     "available": true,
-    "image_url": "/images/spaghetti-carbonara.jpg",
+    "image_url": "/images/menu/breakfast2.jpg",
     "preparation_time": 20,
     "likes": 200,
     "suggestions": [14, 15, 16]
@@ -42,7 +42,7 @@
     "calories": 600,
     "weight": 500,
     "available": true,
-    "image_url": "/images/lasagna.jpg",
+    "image_url": "/images/menu/breakfast3.jpg",
     "preparation_time": 30,
     "likes": 250,
     "suggestions": [14, 15, 16]
@@ -58,7 +58,7 @@
     "calories": 200,
     "weight": 250,
     "available": true,
-    "image_url": "/images/caprese-salad.jpg",
+    "image_url": "/images/menu/salad1.jpg",
     "preparation_time": 10,
     "likes": 100,
     "suggestions": [14, 15, 16]
@@ -74,7 +74,7 @@
     "calories": 400,
     "weight": 200,
     "available": true,
-    "image_url": "/images/tiramisu.jpg",
+    "image_url": "/images/menu/salad2.jpg",
     "preparation_time": 15,
     "likes": 180,
     "suggestions": [14, 15, 16]
@@ -90,7 +90,7 @@
     "calories": 250,
     "weight": 150,
     "available": true,
-    "image_url": "/images/bruschetta.jpg",
+    "image_url": "/images/menu/salad3.jpg",
     "preparation_time": 10,
     "likes": 120,
     "suggestions": [14, 15, 16]
@@ -106,7 +106,7 @@
     "calories": 500,
     "weight": 400,
     "available": true,
-    "image_url": "/images/fettuccine-alfredo.jpg",
+    "image_url": "/images/menu/salad4.jpg",
     "preparation_time": 20,
     "likes": 170,
     "suggestions": [14, 15, 16]
@@ -122,7 +122,7 @@
     "calories": 300,
     "weight": 350,
     "available": true,
-    "image_url": "/images/minestrone-soup.jpg",
+    "image_url": "/images/menu/vegetables.jpg",
     "preparation_time": 25,
     "likes": 130,
     "suggestions": [14, 15, 16]
@@ -138,7 +138,7 @@
     "calories": 400,
     "weight": 300,
     "available": true,
-    "image_url": "/images/risotto.jpg",
+    "image_url": "/images/menu/pasta1.jpg",
     "preparation_time": 30,
     "likes": 160,
     "suggestions": [14, 15, 16]
@@ -154,7 +154,7 @@
     "calories": 350,
     "weight": 150,
     "available": true,
-    "image_url": "/images/panna-cotta.jpg",
+    "image_url": "/images/menu/pasta2.jpg",
     "preparation_time": 15,
     "likes": 140,
     "suggestions": [14, 15, 16]
