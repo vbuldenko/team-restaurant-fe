@@ -1,9 +1,6 @@
 export enum Path {
   Home = "/",
-  Services = "services",
-  Schedule = "schedule-trainings",
-  Prices = "prices",
-  Contacts = "contacts",
+  Menu = "/menu",
   Login = "sign-in",
   SignUp = "sign-up",
   Restore = "/forgot-password",
@@ -11,12 +8,4 @@ export enum Path {
   Activate = "activate/:activationToken",
   ResetPassword = "reset-password",
   Account = "account",
-  Purchases = "purchases",
-  Users = "users",
-  SelectedUser = "users/:id",
-  Team = "team",
-  Clients = "clients",
-  Settings = "settings",
-  CheckEmail = "check-email",
-  ScheduleEditor = "schedule-editor",
 }

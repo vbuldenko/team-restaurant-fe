@@ -12,11 +12,11 @@ type Props = {
 };
 
 const navLinkImages: Record<NavBarLinks, string> = {
-  [NavBarLinks.Home]: "/images/home.png",
-  [NavBarLinks.Reservation]: "/images/reservation.png",
-  [NavBarLinks.Menu]: "/images/menu.png",
-  [NavBarLinks.OurStory]: "/images/story.png",
-  [NavBarLinks.Events]: "/images/events.png",
+  [NavBarLinks.Home]: "/images/navigation/home.png",
+  [NavBarLinks.Reservation]: "/images/navigation/reservation.png",
+  [NavBarLinks.Menu]: "/images/navigation/menu.png",
+  [NavBarLinks.AboutUs]: "/images/navigation/story.png",
+  [NavBarLinks.Events]: "/images/navigation/events.png",
 };
 
 export const Navigation: React.FC<Props> = ({ className, handleClick }) => {

@@ -35,7 +35,7 @@
     "home": "Home",
     "reservation": "Reservation",
     "menu": "Menu",
-    "ourstory": "Our story",
+    "aboutus": "About Us",
     "events": "Events",
     "contacts": "Contacts",
     "socials": "Follow us",
@@ -47,7 +47,30 @@
       "secondary": "Restaurant of",
       "description": "Italian cuisine"
     },
-    "hero_button": "Reserve a table"
+    "hero_button": "Reserve a table",
+    "about": {
+      "title": "About Us",
+      "description": "Illicium, nestled in the heart of Kyiv, is your destination for authentic Italian dining. Since opening in 2023, our restaurant has blossomed under the passionate guidance of Nicole Sinner. In 2024, we relocated to our stunning new space in the Pechersk district, complete with a refreshed menu that celebrates the warmth and depth of Italian cuisine. Chef Alex Brim, inspired by family traditions in Southern Italy and classical culinary training, curates dishes that bring the flavors of Italy to life. Our menu is a tribute to seasonal ingredients, showcasing regional specialties from the sun-drenched coasts to the rolling hills of Tuscany. Each plate is crafted to share, fostering a vibrant dining experience filled with conversation and connection. Indulge in our selection of hand-crafted pasta, wood-fired pizzas, fresh Mediterranean seafood, and house-made antipasti. Our expertly curated wine list highlights renowned Italian vineyards, while our cocktail menu offers modern twists on classic Italian aperitifs and digestifs. At Illicium, we invite you to savor the rich traditions and new interpretations of Italian cuisine. Buon appetito!",
+      "button": "Read More"
+    },
+    "cuisine": {
+      "title": "Our Cuisine",
+      "subtitle": "At Illicium, we invite you to savor the rich traditions and new interpretations of Italian cuisine.",
+      "description": "Our menu is a tribute to seasonal ingredients, showcasing regional specialties from the sun-drenched coasts to the rolling hills of Tuscany. Each plate is crafted to share, fostering a vibrant dining experience filled with conversation and connection. Indulge in our selection of hand-crafted pasta, wood-fired pizzas, fresh Mediterranean seafood, and house-made antipasti. Our expertly curated wine list highlights renowned Italian vineyards, while our cocktail menu offers modern twists on classic Italian aperitifs and digestifs. At Illicium, we invite you to savor the rich traditions and new interpretations of Italian cuisine. Buon appetito!",
+      "button": "View Menu"
+    },
+    "bar": {
+      "title": "The Bar",
+      "subtitle": "Join us at Illicium for a taste of the Italian aperitivo tradition.",
+      "description": "Our bar program celebrates the art of the aperitivo, a cherished Italian tradition of pre-dinner drinks and small bites. Our expert mixologists craft a range of classic and contemporary cocktails, each designed to complement the flavors of our cuisine. Sip on a refreshing",
+      "button": "Explore the Bar Menu"
+    },
+    "events": {
+      "title": "Events",
+      "subtitle": "Enjoy a taste of Italy at your next gathering.",
+      "description": "Host your next event at Illicium, where our private dining spaces and custom menus are perfect for any occasion. From intimate gatherings to grand celebrations, our team will work with you to create a memorable experience for you and your guests.",
+      "button": "Learn More"
+    }
   },
   "contacts": {
     "title": "Contacts",

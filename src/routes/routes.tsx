@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import HomePage from "../pages/Home/Home";
+import MenuPage from "../pages/Menu";
+import { Path } from "../types/Path";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +12,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />, // Error boundary
     children: [
       { index: true, element: <HomePage /> }, // Default route
-      // { path: "about", element: <About /> },
+      { path: Path.Menu, element: <MenuPage /> },
       {
         path: "*",
         element: <ErrorPage />,

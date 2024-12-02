@@ -4,7 +4,8 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background-color: $color-background-main;
+  // background-color: $color-background-main;
+  background-color: $color-background-dark;
   padding-block: 10rem 5rem;
   max-height: min-content;
   transform: translateY(-100%); /* Start off-screen on top */
