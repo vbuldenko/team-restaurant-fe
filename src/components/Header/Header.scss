@@ -1,12 +1,20 @@
 .header {
+  display: flex;
   z-index: 3;
   position: fixed;
-  padding-top: 2rem;
-  padding-bottom: 0.5rem;
+  top: 0;
+  // padding-top: 1.5rem;
+  // padding-bottom: 0.5rem;
+  height: 80px;
+  color: $color-white;
   // background-color: $color-background-main;
-  background-color: $color-background-dark;
+  background-color: rgba(9, 6, 19, 0.5);
+  background-image: url("images/hero/hero_bg.png");
+  background-size: auto;
+  // background-repeat: no-repeat;
+  background-position: top;
+  // backdrop-filter: blur(20px);
   width: 100%;
-  border-bottom: 1px solid #f5decf;
 
   &__left {
     display: flex;

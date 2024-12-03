@@ -9,7 +9,8 @@
     // margin-block: 8px;
     display: block;
     height: 1px;
-    background-color: white;
+    // background-color: white;
+    background-color: $color-white;
     transition: 0.3s;
 
     &:nth-child(1) {

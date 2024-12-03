@@ -43,9 +43,8 @@
   },
   "home": {
     "hero_titles": {
-      "main": "Illicium",
-      "secondary": "Restaurant of",
-      "description": "Italian cuisine"
+      "main": "Enjoy the taste of delicious food",
+      "description": "Positioned in the heart of Kyiv, Illicium is your destination for authentic Italian dining."
     },
     "hero_button": "Reserve a table",
     "about": {

@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   display: flex;
   width: 100%;
   height: 100vh;
@@ -7,6 +8,18 @@
   background-size: cover;
   background-position: center;
   color: $color-white;
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   background-color: rgba(153, 0, 255, 0.5);
+  //   // backdrop-filter: blur(20px);
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   // border-radius: 25% 25% 0 0;
+  // }
 
   // @include on-desktop {
   //   height: auto;
@@ -19,30 +32,31 @@
   }
 
   &__text {
-    position: relative;
-    grid-column: 1/-1;
+    // position: relative;
+    // text-align: center;
+    grid-column: 1/6;
     // font-family:
     //   Nova Slim,
     //   Arial,
     //   sans-serif;
     font-size: 60px;
     line-height: 1;
-    text-transform: lowercase;
+    // text-transform: lowercase;
     @include page-grid;
 
     & span {
-      width: max-content;
       z-index: 1;
       grid-column: 1/-1;
-      font-size: 2rem;
+      font-size: 1.25rem;
+      line-height: 1.5;
       justify-self: center;
     }
 
     & :nth-child(1) {
       // justify-self: center;
-      font-size: 80px;
+      font-size: 60px;
+      line-height: 1;
       font-weight: 500;
-      // letter-spacing: 1.25rem;
       text-transform: uppercase;
       font-family:
         Nova Slim,
@@ -50,9 +64,9 @@
         sans-serif;
     }
 
-    // & :nth-child(2) {
-    //   justify-self: end;
-    // }
+    & :nth-child(2) {
+      grid-column: span 8;
+    }
 
     // @include on-tablet {
     //   font-size: 100px;
@@ -74,12 +88,12 @@
     @include on-desktop {
       font-size: 120px;
 
-      & :nth-child(1) {
-        // grid-column: 3/-1;
-        grid-column: 1/-1;
-        font-size: 180px;
-        line-height: 1.2;
-      }
+      // & :nth-child(1) {
+      //   // grid-column: 3/-1;
+      //   grid-column: 1/-1;
+      //   font-size: 140px;
+      //   line-height: 1.2;
+      // }
 
       // & :nth-child(2) {
       //   grid-column: 6/-1;
@@ -119,26 +133,24 @@
   }
 
   &__button {
-    justify-self: center;
-    grid-column: 1/-1;
+    grid-column: 1/6;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid $color-primary;
-    background-color: #ff69391a;
-    border-radius: $border-radius-s;
-    width: 330px;
+    background-color: $color-primary;
+    border-radius: $border-radius-m;
+    width: 300px;
     height: 46px;
-    margin-block: 40px;
+    font-weight: 500;
 
-    @include on-tablet {
-      width: 660px;
-      margin-block: 80px;
-    }
+    // @include on-tablet {
+    //   width: 400px;
+    //   margin-block: 80px;
+    // }
 
-    @include on-desktop {
-      width: 948px;
-      height: 66px;
-    }
+    // @include on-desktop {
+    //   width: 948px;
+    //   height: 66px;
+    // }
   }
 }
