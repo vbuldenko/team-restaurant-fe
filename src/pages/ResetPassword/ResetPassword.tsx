@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router";
 import { authService } from "../../services/authService";
 import Notification from "../../components/Elements/Notification";
 import { getErrorMessage } from "../../utils/utils";

@@ -1,5 +1,5 @@
 export enum NavBarLinks {
-  Home = "/",
+  // Home = "/",
   Reservation = "/reservation",
   Menu = "/menu",
   AboutUs = "/story",

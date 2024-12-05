@@ -4,7 +4,7 @@ import { Logo } from "../Logo";
 import { NavBarLinks } from "../../types/NavBarLinks";
 import { getLinkClass, scrollToTop } from "../../utils";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 
 export const Footer = () => {
   const { t } = useTranslation();

@@ -1,31 +1,36 @@
-import { useRouteError, Link } from "react-router-dom";
-// import "./ErrorPage.scss";
+import { isRouteErrorResponse, Link } from "react-router";
+import { Route } from "./+types/root";
 
-interface RouteError {
-  statusText?: string;
-  message?: string;
-}
-
-const ErrorPage: React.FC = () => {
-  const error = useRouteError() as RouteError;
-  console.error(error);
-
-  return (
-    <div id="error-page" className="error-page">
-      <div className="error-page__container">
-        <h1>Oops!</h1>
-        <h1 className="error-page__title">
-          {error?.statusText || "Unknown Error"}
+export default function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  if (isRouteErrorResponse(error)) {
+    return (
+      <>
+        <h1>
+          {error.status} {error.statusText}
         </h1>
-        <p className="error-page__message">
-          {error?.message || "Something went wrong."}
-        </p>
-        <Link to="/" className="error-page__link">
+        <p>{error.data}</p>
+      </>
+    );
+  } else if (error instanceof Error) {
+    return (
+      <div>
+        <h1>Error</h1>
+        <p>{error.message}</p>
+        <p>The stack trace is:</p>
+        <pre>{error.stack}</pre>
+      </div>
+    );
+  } else {
+    return (
+      <div className="container py-24 flex flex-col gap-2">
+        <h1>Unknown Error</h1>
+        <Link
+          to="/"
+          className="error-page__link bg-orange-300 text-white rounded-md px-4 py-2 self-start"
+        >
           Go back home
         </Link>
       </div>
-    </div>
-  );
-};
-
-export default ErrorPage;
+    );
+  }
+}

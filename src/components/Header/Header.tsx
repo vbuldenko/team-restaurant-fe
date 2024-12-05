@@ -9,7 +9,7 @@ import { useAppSelector } from "../../app/hooks";
 import { selectAuth } from "../../features/auth/authSlice";
 import { Path } from "../../types/Path";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export const Header = () => {
   const { i18n } = useTranslation();
@@ -34,9 +34,15 @@ export const Header = () => {
   return (
     <>
       <header className="header">
-        <div className="container flex items-center justify-between">
+        <div className="header__container">
+          {/* <div className="header__left"> */}
           <MenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           <Logo />
+          <Navigation
+            className={isMenuOpen ? "open" : ""}
+            handleClick={closeMobileMenu}
+          />
+          {/* </div> */}
 
           <div className="header__right gap-4">
             <CustomSelect
@@ -57,12 +63,12 @@ export const Header = () => {
           </div>
         </div>
       </header>
-      <aside>
+      {/* <aside>
         <Navigation
           className={isMenuOpen ? "open" : ""}
           handleClick={closeMobileMenu}
         />
-      </aside>
+      </aside> */}
     </>
   );
 };

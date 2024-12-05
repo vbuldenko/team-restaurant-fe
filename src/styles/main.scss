@@ -23,10 +23,13 @@ html {
 }
 
 main {
+  // background: $background-img;
+  // padding-block: 5rem;
   overflow: hidden;
   // @include content-padding-inline();
 }
 
 .container {
+  // width: 100%;
   @include content-padding-inline();
 }

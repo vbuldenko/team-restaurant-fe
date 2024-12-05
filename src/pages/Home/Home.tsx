@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Hero } from "../../components/Hero";
-import { InfoSection } from "../../components/InfoSection";
+import InfoSection from "../../components/InfoSection";
 import { NavBarLinks } from "../../types/NavBarLinks";
 
 export default function HomePage() {
