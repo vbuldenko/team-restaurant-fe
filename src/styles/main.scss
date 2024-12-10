@@ -14,8 +14,14 @@
 @import "components/buttons";
 @import "components/cards";
 
+// body::-webkit-scrollbar {
+//   display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+// }
+
 :root {
   --root-font-size: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html {

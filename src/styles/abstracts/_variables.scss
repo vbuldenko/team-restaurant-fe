@@ -28,6 +28,10 @@ $color-gray-4: #8e8e93; //Secondary text 2
 $color-gray-5: #636366; //Strokes
 $color-gray-6: #3a3a3c; //Separate backgroound
 
+$color-gray-transparent-1: rgba(231, 231, 231, 0.1);
+$color-gray-transparent-2: rgba(224, 224, 224, 0.1);
+$color-gray-transparent-3: rgba(58, 58, 60, 0.1);
+
 $color-error: #bb2525;
 $color-info: #3365cf;
 $color-warning: #fdb500;
@@ -37,3 +41,5 @@ $duration: 0.3s;
 $background-img: url("/images/hero/hero_bg.png") center/cover no-repeat fixed;
 $blur: blur(20px);
 $blur-bg: rgba(143, 143, 143, 0.25);
+
+$shadow: 0 0 4px $color-primary;

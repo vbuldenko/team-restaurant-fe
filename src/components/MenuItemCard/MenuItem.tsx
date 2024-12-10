@@ -31,15 +31,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
       })}
       onClick={() => clickHandler(data)}
     >
-      <div className="menu-item__calories">
+      {/* <div className="menu-item__calories">
         <span className="w-min">{calories} kcal</span>
-      </div>
-      <div className="menu-item__likes">
+      </div> */}
+      {/* <div className="menu-item__likes">
         <span className="w-min text-center">
-          {/* <HeartIcon className="h-5 w-5" /> */}
           {weight} gram
         </span>
-      </div>
+      </div> */}
       <div className="menu-item__image-container">
         <img src={image_url} alt={name} className="menu-item__image" />
       </div>

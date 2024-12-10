@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
-import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
+import {
+  HeartIcon,
+  ShoppingCartIcon,
+  ClockIcon,
+  FireIcon,
+  BanknotesIcon,
+  ScaleIcon,
+  PlusIcon,
+} from "@heroicons/react/24/outline";
 import "./DishCard.scss";
 
 export const DishCard = ({ item }) => {
@@ -38,21 +46,80 @@ export const DishCard = ({ item }) => {
 
   return (
     <div className="dish">
-      <div className="dish__image-container">
-        <img src={item.image_url} alt={item.name} className="dish__image" />
-      </div>
-      <div className="dish__content">
-        <h2 className="dish__name">{item.name}</h2>
-        <p className="dish__description">{item.description}</p>
-        <p className="dish__category">{item.category}</p>
-        <div className="dish__calories">
-          <span>{item.calories} kcal</span>
-        </div>
-        <div className="dish__likes">
+      <h2 className="dish__name">{item.name}</h2>
+      <div className="dish__info">
+        {/* <p className="dish__category">{item.category}</p> */}
+        <div className="dish__info-item">
           <HeartIcon className="h-5 w-5" />
           <span>{item.likes}</span>
         </div>
-        <div className="dish__counter">
+        <div className="dish__info-item">
+          <FireIcon className="h-5 w-5" />
+          <span>{item.calories} kcal</span>
+        </div>
+        <div className="dish__info-item">
+          <ScaleIcon className="h-5 w-5" />
+          <span>{item.weight} gramm</span>
+        </div>
+        <div className="dish__info-item">
+          <ClockIcon className="h-5 w-5" />
+          <span>{item.preparation_time} min</span>
+        </div>
+        <div className="dish__info-item">
+          <BanknotesIcon className="h-5 w-5" />
+          <span>{item.price.toFixed(2)} UAH</span>
+        </div>
+      </div>
+      <div className="dish__image-container">
+        <img src={item.image_url} alt={item.name} className="dish__image" />
+      </div>
+      <p className="dish__description">{item.description}</p>
+      <div className="dish__suggestion suggestion">
+        <h2 className="suggestion__title">Drink suggestions</h2>
+        <div className="suggestion__content">
+          <div className="suggestion__item flex flex-col">
+            <div className="suggestion__image"></div>
+            <p className="suggestion__name">Pellegrino Vine</p>
+            <p className="suggestion__price">150 UAH</p>
+            <div className="flex justify-between w-full">
+              <button>
+                <HeartIcon className="h-5 w-5" />
+              </button>
+              <button className="bg-orange-400 text-white p-1 rounded-lg">
+                <PlusIcon className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+          <div className="suggestion__item flex flex-col">
+            <div className="suggestion__image"></div>
+            <p className="suggestion__name">Pellegrino Vine</p>
+            <p className="suggestion__price">150 UAH</p>
+            <div className="flex justify-between w-full">
+              <button>
+                <HeartIcon className="h-5 w-5" />
+              </button>
+              <button className="bg-orange-400 text-white p-1 rounded-lg">
+                <PlusIcon className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+          <div className="suggestion__item flex flex-col">
+            <div className="suggestion__image"></div>
+            <p className="suggestion__name">Pellegrino Vine</p>
+            <p className="suggestion__price">150 UAH</p>
+            <div className="flex justify-between w-full">
+              <button>
+                <HeartIcon className="h-5 w-5" />
+              </button>
+              <button className="bg-orange-400 text-white p-1 rounded-lg">
+                <PlusIcon className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="dish__ordering">
+        {/* <div className="dish__counter">
           <button className="dish__counter-button" onClick={decrement}>
             -
           </button>
@@ -60,8 +127,7 @@ export const DishCard = ({ item }) => {
           <button className="dish__counter-button" onClick={increment}>
             +
           </button>
-        </div>
-        <p className="dish__price">${item.price.toFixed(2)}</p>
+        </div> */}
         <button className="dish__order-button">
           <ShoppingCartIcon className="h-5 w-5" />
           Add to order
