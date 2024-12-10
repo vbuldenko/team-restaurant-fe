@@ -36,40 +36,60 @@
   }
 
   &__title {
-    font-size: 110px;
+    font-size: $title-fontsize-mobile;
     font-weight: normal;
     line-height: 1;
     width: max-content;
+
+    @include on-tablet {
+      font-size: $title-fontsize-tablet;
+    }
+    @include on-desktop {
+      font-size: $title-fontsize-desktop;
+    }
   }
 
   &__subtitle {
-    font-size: 2rem;
+    font-size: $subtitle-fontsize-mobile;
     line-height: 1.25;
     padding-block: 5rem 1rem;
     text-align: center;
+
+    @include on-tablet {
+      font-size: $subtitle-fontsize-tablet;
+    }
   }
 
   &__description {
     padding-block: 24px 40px;
-    // padding-inline: 20px;
     text-align: center;
+    font-size: $text-fontsize-mobile;
+    line-height: 1.5;
+
+    @include on-tablet {
+      font-size: $text-fontsize-tablet;
+    }
+
+    @include on-desktop {
+      font-size: $text-fontsize-desktop;
+    }
   }
 
   &__button {
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid $color-primary;
     background-color: $color-primary;
     color: $color-white;
     border-radius: $border-radius-m;
     width: 330px;
     height: 46px;
     margin-bottom: 4rem;
+    font-size: $button-fontsize-mobile;
 
-    // @include on-mobile {
-    //   margin-bottom: 4rem;
-    // }
+    @include on-tablet {
+      font-size: $button-fontsize-tablet;
+    }
     // @include on-tablet {
     //   // margin-bottom: 4rem;
     // }

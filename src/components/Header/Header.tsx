@@ -36,7 +36,7 @@ export const Header = () => {
       <header className="header">
         <div className="header__container">
           {/* <div className="header__left"> */}
-          <MenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          {/* <MenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> */}
           <Logo />
           <Navigation
             className={isMenuOpen ? "open" : ""}
@@ -44,7 +44,7 @@ export const Header = () => {
           />
           {/* </div> */}
 
-          <div className="header__right gap-4">
+          <div className="header__right gap-6">
             <CustomSelect
               value={lang}
               options={["ua", "en"]}
@@ -60,6 +60,8 @@ export const Header = () => {
                 {t("nav.login")}
               </Link>
             )}
+
+            <MenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           </div>
         </div>
       </header>

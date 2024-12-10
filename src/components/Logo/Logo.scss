@@ -9,10 +9,15 @@
 
   & a {
     display: flex;
+    align-items: center;
     gap: 0.25rem;
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     width: max-content;
+
+    @include on-tablet {
+      font-size: 2.25rem;
+    }
   }
 
   &__image {

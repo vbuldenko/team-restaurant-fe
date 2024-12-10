@@ -1,5 +1,4 @@
 .hero {
-  // --hero-bg: url("/images/hero/hero_bg.png") center/cover no-repeat;
   position: relative;
   display: flex;
   width: 100%;
@@ -9,193 +8,118 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  // color: $color-white;
-  // background: var(--hero-bg);
 
   &::before {
     content: "";
     position: absolute;
     background-color: rgba(143, 143, 143, 0.25);
     backdrop-filter: blur(20px);
-    top: 100px;
+    top: 0;
     left: 0;
-    bottom: 60px;
-    width: 50%;
-    // height: calc(100% - 180px);
-    border-radius: 0 $border-radius-l $border-radius-l 0;
-    // height: 100vh;
+    bottom: 30%;
+    width: 100%;
 
-    // background: url("/images/hero/hero_bg.png") center/cover no-repeat;
-    // background-clip: text;
-    // -webkit-background-clip: text;
-    // color: transparent;
+    @include on-tablet {
+      top: 0;
+      bottom: 0;
+      width: 60%;
+    }
+
+    @include on-desktop {
+      width: 50%;
+    }
   }
 
-  // @include on-desktop {
-  //   height: auto;
-  // }
-
   &__content {
-    position: relative;
-    // backdrop-filter: blur(20px);
-    margin-top: 160px;
-    @include page-grid;
-    @include content-padding-inline();
-
-    // background: url("/images/hero/hero_bg.png") center/cover no-repeat;
-    // background-clip: text;
-    // -webkit-background-clip: text;
-    // color: transparent;
-
-    // &::before {
     z-index: 2;
-    //   position: absolute;
-    //   content: "";
-    //   top: 0;
-    //   left: 0;
-    //   width: 50%;
-    //   height: 100vh;
-    //   backdrop-filter: blur(20px);
-    // }
+    margin-top: 160px;
+    @include content-padding-inline();
+    @include page-grid;
+    row-gap: 3rem;
   }
 
   &__text {
+    grid-column: 1/-1;
     color: $color-gray-4;
-
-    // color: $color-primary;
     z-index: 2;
-    // position: relative;
-    // text-align: center;
-    grid-column: 1/6;
-    // font-family:
-    //   Nova Slim,
-    //   Arial,
-    //   sans-serif;
-    font-size: 60px;
-    line-height: 1;
-    // text-transform: lowercase;
+
     @include page-grid;
 
-    & span {
-      // color: transparent;
-      // z-index: 1;
-      grid-column: 1/-1;
-      font-size: 1.25rem;
-      line-height: 1.5;
-      justify-self: center;
-    }
-
     & :nth-child(1) {
-      // color: rgba(255, 166, 0, 0.75);
-      // background: url("/images/hero/hero_bg.png") left/cover no-repeat;
-      // background: var(--hero-bg);
-      color: transparent;
-      background: url("images/hero/hero_bg.png") center/cover no-repeat;
-      background-attachment: fixed;
-      background-clip: text;
-      -webkit-background-clip: text;
-
+      grid-column: 1/-1;
       font-size: 60px;
       line-height: 1;
       font-weight: 600;
       letter-spacing: 0.1rem;
       text-transform: uppercase;
+      text-align: center;
       font-family:
         Nova Slim,
         Arial,
         sans-serif;
+
+      color: transparent;
+      background: url("images/hero/hero_bg.png") center/cover no-repeat;
+      background-attachment: fixed;
+      background-clip: text;
+      -webkit-background-clip: text;
     }
 
     & :nth-child(2) {
-      grid-column: span 8;
+      grid-column: 1/-1;
+      font-size: 1.25rem;
+      text-align: center;
     }
 
-    // @include on-tablet {
-    //   font-size: 100px;
+    @include on-tablet {
+      & :nth-child(1) {
+        font-size: 65px;
+        grid-column: 1/8;
+        min-width: 375px;
+        text-align: left;
+      }
 
-    //   & :nth-child(1) {
-    //     font-size: 150px;
-    //     justify-self: center;
-    //   }
-
-    //   & :nth-child(2) {
-    //     grid-column: 6/-1;
-    //   }
-
-    //   & :nth-child(3) {
-    //     grid-column: 2/-1;
-    //   }
-    // }
+      & :nth-child(2) {
+        text-align: left;
+        grid-column: 1/5;
+      }
+    }
 
     @include on-desktop {
-      font-size: 120px;
+      & :nth-child(1) {
+        grid-column: 1/8;
+        font-size: 80px;
+        line-height: 1.1;
+        width: auto;
+      }
 
-      // & :nth-child(1) {
-      //   // grid-column: 3/-1;
-      //   grid-column: 1/-1;
-      //   font-size: 140px;
-      //   line-height: 1.2;
-      // }
-
-      // & :nth-child(2) {
-      //   grid-column: 6/-1;
-      // }
-
-      // & :nth-child(3) {
-      //   grid-column: 1/-1;
-      // }
-    }
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      display: block;
-      background-repeat: no-repeat;
-      // background-position: center;
-    }
-
-    &::before {
-      // background-image: url("images/hero/hero_decor_left.png");
-      top: 0;
-      left: 0;
-      width: 420px;
-      height: 263px;
-      background-size: contain;
-    }
-
-    &::after {
-      // background-image: url("images/hero/hero_decor_right.png");
-      bottom: 0;
-      right: -155px;
-      width: 350px;
-      height: 300px;
-      background-size: contain;
+      & :nth-child(2) {
+        width: 300px;
+      }
     }
   }
 
   &__button {
     z-index: 2;
-    grid-column: 1/6;
+    grid-column: 1/-1;
+    justify-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid $color-primary;
     border-radius: $border-radius-m;
-    width: 300px;
+    width: 250px;
     height: 46px;
+    font-size: $button-fontsize-mobile;
     font-weight: 500;
     color: $color-primary;
-    // color: $color-white;
+    // margin-block: 60px;
 
-    // @include on-tablet {
-    //   width: 400px;
-    //   margin-block: 80px;
-    // }
-
-    // @include on-desktop {
-    //   width: 948px;
-    //   height: 66px;
-    // }
+    @include on-tablet {
+      width: 300px;
+      margin-block: 60px;
+      justify-self: flex-start;
+      font-size: $button-fontsize-tablet;
+    }
   }
 }
