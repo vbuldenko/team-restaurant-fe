@@ -20,6 +20,7 @@
   &__name {
     grid-column: 1/-1;
     font-size: 1.25rem;
+    letter-spacing: 0.05rem;
     font-weight: bold;
     text-align: center;
     color: $color-gray-2;
@@ -150,6 +151,7 @@
 
   &__title {
     font-size: 1.25rem;
+    letter-spacing: 0.05rem;
     color: $color-gray-2;
     text-align: center;
   }

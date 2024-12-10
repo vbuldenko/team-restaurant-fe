@@ -18,11 +18,11 @@
     background-color: rgba(143, 143, 143, 0.25);
     backdrop-filter: blur(20px);
     top: 100px;
-    left: 80px;
+    left: 0;
     bottom: 60px;
-    width: 675px;
+    width: 50%;
     // height: calc(100% - 180px);
-    border-radius: $border-radius-l;
+    border-radius: 0 $border-radius-l $border-radius-l 0;
     // height: 100vh;
 
     // background: url("/images/hero/hero_bg.png") center/cover no-repeat;
