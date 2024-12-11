@@ -5,7 +5,7 @@ import { Footer } from "./components/Footer";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import HomePage from "./pages/Home";
 import MenuPage from "./pages/Menu";
-import { DishCard } from "./components/DishCard";
+import ReservationPage from "./pages/Reservation";
 
 const MainLayout = () => {
   return (
@@ -24,9 +24,11 @@ export default function App() {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path={Path.Menu} element={<MenuPage />}>
+        <Route path={Path.Menu} element={<MenuPage />} />
+        <Route path={Path.Reservation} element={<ReservationPage />} />
+        {/* <Route path={Path.Menu} element={<MenuPage />}>
           <Route path=":id" element={<DishCard />} />
-        </Route>
+        </Route> */}
 
         {/* <Route path={Path.Services} element={<ServicesPage />} />        <Route path={Path.Login} element={<LoginPage />} />
         <Route path={Path.SignUp} element={<SignUpPage />} />

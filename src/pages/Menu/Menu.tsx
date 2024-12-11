@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation, Link, Outlet, NavLink } from "react-router";
 import { useTranslation } from "react-i18next";
 import "./Menu.scss";
 import { DishCard } from "../../components/DishCard";

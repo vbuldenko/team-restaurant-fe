@@ -1,6 +1,7 @@
 export enum Path {
   Home = "/",
   Menu = "menu",
+  Reservation = "reservation",
   Login = "sign-in",
   SignUp = "sign-up",
   Restore = "forgot-password",
