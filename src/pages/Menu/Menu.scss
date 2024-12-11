@@ -24,22 +24,31 @@
     // backdrop-filter: blur(20px);
     @include page-grid;
     height: 100%;
+    align-content: start;
   }
 
   &__categories {
     z-index: 1;
     padding: 0.3rem 0.5rem;
-    grid-column: 1/3;
+    grid-column: 1/-1;
     display: flex;
-    flex-direction: column;
-    // align-items: center;
     gap: 1rem;
+    height: max-content;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    @include on-desktop {
+      grid-column: 1/3;
+      flex-direction: column;
+    }
   }
 
   &__category {
     display: flex;
     padding: 0.5rem 1rem;
     color: $color-gray-4;
+    min-width: max-content;
     cursor: pointer;
     @include hover(color, $color-hover);
 
@@ -53,17 +62,27 @@
   &__items {
     padding: 0.3rem 0.5rem;
     // grid-column: 1/7;
-    grid-column: 3/8;
+    grid-column: 1/-1;
+
     // @include page-grid;
     // height: 100%;
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
     gap: 1rem;
     // align-items: center;
     overflow-y: scroll;
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
     scrollbar-width: none; /* Hide scrollbar for Firefox */
+
+    @include on-desktop {
+      grid-column: 3/-1;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &--selected {
+        grid-column: 3/8;
+      }
+    }
   }
 
   // &--items::-webkit-scrollbar {
@@ -71,18 +90,46 @@
   // }
 
   &__selected-item {
-    // padding: 0.3rem 0.5rem;
-    padding-block: 0.3rem;
-    // grid-column: 7/-1;
-    grid-column: 8/-1;
-    // background-color: rgba(143, 143, 143, 0.25);
-    // backdrop-filter: blur(20px);
+    @include on-mobile {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      background: black;
+      padding-block: 5rem 2rem;
+
+      @include content-padding-inline;
+    }
+
+    @include on-tablet {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      // height: 100%;
+      background: black;
+      padding-block: 5rem 2rem;
+      padding-inline: 2rem;
+    }
+
+    @include on-desktop {
+      background: none;
+      position: static;
+      padding-block: 0.3rem;
+      padding-inline: 0;
+      display: block;
+      grid-column: 8/-1;
+    }
   }
 }
 
 .menu-item {
-  // flex: 1;
-  // min-width: 200px;
+  flex: 1;
+  min-width: 300px;
   // height: 350px;
   // color: $color-white;
   // height: 300px;

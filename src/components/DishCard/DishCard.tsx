@@ -9,10 +9,11 @@ import {
   BanknotesIcon,
   ScaleIcon,
   PlusIcon,
+  ChevronLeftIcon,
 } from "@heroicons/react/24/outline";
 import "./DishCard.scss";
 
-export const DishCard = ({ item }) => {
+export const DishCard = ({ item, backHandler }) => {
   // const { id } = useParams<{ id: string }>();
   // const [item, setItem] = useState<any>(null);
   // const [loading, setLoading] = useState(true);
@@ -46,6 +47,9 @@ export const DishCard = ({ item }) => {
 
   return (
     <div className="dish">
+      <button className="dish__back-btn" onClick={backHandler}>
+        <ChevronLeftIcon className="h-5 w-5" />
+      </button>
       <h2 className="dish__name">{item.name}</h2>
       <div className="dish__info">
         {/* <p className="dish__category">{item.category}</p> */}

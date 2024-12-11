@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import "./Menu.scss";
 import { DishCard } from "../../components/DishCard";
 import MenuItemCard from "../../components/MenuItemCard";
+import classNames from "classnames";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -17,7 +18,6 @@ const Menu = () => {
       .then((response) => response.json())
       .then((data) => {
         setMenuItems(data);
-        setSelectedItem(data[0]);
         setLoading(false);
       })
       .catch((error) => {
@@ -31,6 +31,7 @@ const Menu = () => {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+    setSelectedItem(null);
   };
 
   const uniqueCategories = [
@@ -71,7 +72,11 @@ const Menu = () => {
           ))}
         </div>
 
-        <div className="menu__items">
+        <div
+          className={classNames("menu__items", {
+            "menu__items--selected": selectedItem,
+          })}
+        >
           {filteredMenuItems.map((item) => (
             <MenuItemCard
               key={item.id}
@@ -81,9 +86,14 @@ const Menu = () => {
             />
           ))}
         </div>
-        <div className="menu__selected-item">
-          {selectedItem && <DishCard item={selectedItem} />}
-        </div>
+        {selectedItem && (
+          <div className="menu__selected-item">
+            <DishCard
+              item={selectedItem}
+              backHandler={() => setSelectedItem(null)}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
