@@ -55,7 +55,7 @@
       text-transform: uppercase;
       text-align: center;
       font-family:
-        Nova Slim,
+        Nova Square,
         Arial,
         sans-serif;
 
@@ -90,7 +90,7 @@
 
     @include on-desktop {
       & :nth-child(1) {
-        grid-column: 1/8;
+        grid-column: 1/6;
         font-size: 80px;
         line-height: 1.1;
         width: auto;

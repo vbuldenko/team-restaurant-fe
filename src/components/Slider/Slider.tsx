@@ -1,72 +1,127 @@
-import React, { useState } from "react";
-import "./Slider.scss";
+import { useState, useRef, useEffect } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import "./Slider.scss"; // Add your CSS styles here
 
-interface SliderProps {
-  images: string[];
-}
+const Slider = () => {
+  const [listItems, setListItems] = useState([
+    {
+      id: 1,
+      imgSrc: "images/rooms/room_1.jpg",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+    {
+      id: 2,
+      imgSrc: "images/rooms/room_2.jpg",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+    {
+      id: 3,
+      imgSrc: "images/rooms/room_3.jpg",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+    {
+      id: 4,
+      imgSrc: "images/rooms/room_4.jpg",
+      author: "LUNDEV",
+      title: "DESIGN SLIDER",
+      topic: "ANIMAL",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
+    },
+  ]);
 
-const Slider: React.FC<SliderProps> = ({ images }) => {
-  const [backgroundImage, setBackgroundImage] = useState(images[0]);
-  const [thumbnails, setThumbnails] = useState(images.slice(1));
-  const [transitioningImage, setTransitioningImage] = useState<string | null>(
-    null
-  );
-  const [thumbnailStyle, setThumbnailStyle] =
-    useState<React.CSSProperties | null>(null);
+  const [thumbnailItems, setThumbnailItems] = useState([
+    ...listItems.slice(1),
+    listItems[0],
+  ]);
 
-  const handleThumbnailClick = (index: number, event: React.MouseEvent) => {
-    const target = event.currentTarget as HTMLElement;
-    const rect = target.getBoundingClientRect();
+  const carouselRef = useRef(null);
+  const sliderRef = useRef(null);
+  const thumbnailRef = useRef(null);
 
-    // Set the transitioning image with its initial position and size
-    setThumbnailStyle({
-      position: "fixed",
-      top: rect.top,
-      left: rect.left,
-      width: rect.width,
-      height: rect.height,
-      backgroundImage: `url(${thumbnails[index]})`,
-    });
-    setTransitioningImage(thumbnails[index]);
+  const timeRunning = 1500;
+  const timeAutoNext = 7000;
 
-    // Animate and update state after transition
-    setTimeout(() => {
-      setBackgroundImage(thumbnails[index]);
-      setThumbnails((prev) => [
-        ...prev.slice(0, index),
-        ...prev.slice(index + 1),
-        backgroundImage,
+  // useEffect(() => {
+  //   const autoNext = setTimeout(() => {
+  //     showSlider("next");
+  //   }, timeAutoNext);
+
+  //   return () => clearTimeout(autoNext);
+  // }, [listItems, thumbnailItems]);
+
+  const showSlider = (type) => {
+    if (type === "next") {
+      setListItems((prevItems) => [...prevItems.slice(1), prevItems[0]]);
+      setThumbnailItems((prevItems) => [...prevItems.slice(1), prevItems[0]]);
+    } else {
+      setListItems((prevItems) => [
+        prevItems[prevItems.length - 1],
+        ...prevItems.slice(0, -1),
       ]);
-      setTransitioningImage(null);
-      setThumbnailStyle(null);
-    }, 1000); // Match CSS animation duration
+      setThumbnailItems((prevItems) => [
+        prevItems[prevItems.length - 1],
+        ...prevItems.slice(0, -1),
+      ]);
+    }
+
+    if (carouselRef.current) {
+      carouselRef.current.classList.add(type);
+      setTimeout(() => {
+        carouselRef.current.classList.remove(type);
+      }, timeRunning);
+    }
   };
 
   return (
-    <div className="slider">
-      <div
-        className="slider__background"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      ></div>
-      <div className="slider__thumbnails">
-        {thumbnails.map((image, index) => (
-          <div
-            key={index}
-            className="slider__thumbnail"
-            onClick={(e) => handleThumbnailClick(index, e)}
-            style={{ backgroundImage: `url(${image})` }}
-          ></div>
+    <div className="carousel" ref={carouselRef}>
+      <div className="list" ref={sliderRef}>
+        {listItems.map((item) => (
+          <div className="item" key={item.id}>
+            <img src={item.imgSrc} alt="" />
+            <div className="content">
+              <div className="author">{item.author}</div>
+              <div className="title">{item.title}</div>
+              <div className="topic">{item.topic}</div>
+              {/* <div className="des">{item.description}</div> */}
+            </div>
+          </div>
         ))}
       </div>
-      {transitioningImage && (
-        <div
-          className="slider__transition-image"
-          style={{
-            ...thumbnailStyle,
-            animation: "scaleToFullScreen 1s ease forwards",
-          }}
-        ></div>
-      )}
+
+      <div className="thumbnail" ref={thumbnailRef}>
+        {thumbnailItems.map((item) => (
+          <div className="item" key={item.id}>
+            <img src={item.imgSrc} alt="" />
+            <div className="content">
+              <div className="title">{item.title}</div>
+              <div className="description">Description</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="arrows">
+        <button id="prev" onClick={() => showSlider("prev")}>
+          <ChevronLeftIcon className="h-5 w-5" />
+        </button>
+        <button id="next" onClick={() => showSlider("next")}>
+          <ChevronRightIcon className="h-5 w-5" />
+        </button>
+      </div>
+      {/* <div className="time"></div> */}
     </div>
   );
 };
