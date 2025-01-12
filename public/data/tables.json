@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "number": 1,
+    "status": "vacant",
+    "seats": 4,
+    "location": "Window",
+    "reservation": null
+  },
+  {
+    "id": 2,
+    "number": 2,
+    "status": "occupied",
+    "seats": 2,
+    "location": "Center",
+    "reservation": {
+      "name": "John Doe",
+      "time": "2023-10-01T19:00:00",
+      "contact": "123-456-7890"
+    }
+  },
+  {
+    "id": 3,
+    "number": 3,
+    "status": "vacant",
+    "seats": 4,
+    "location": "Patio",
+    "reservation": null
+  },
+  {
+    "id": 4,
+    "number": 4,
+    "status": "vacant",
+    "seats": 6,
+    "location": "Window",
+    "reservation": null
+  },
+  {
+    "id": 5,
+    "number": 5,
+    "status": "reserved",
+    "seats": 2,
+    "location": "Center",
+    "reservation": {
+      "name": "Jane Smith",
+      "time": "2023-10-01T20:00:00",
+      "contact": "987-654-3210"
+    }
+  },
+  {
+    "id": 6,
+    "number": 6,
+    "status": "vacant",
+    "seats": 4,
+    "location": "Patio",
+    "reservation": null
+  },
+  {
+    "id": 7,
+    "number": 7,
+    "status": "vacant",
+    "seats": 6,
+    "location": "Window",
+    "reservation": null
+  },
+  {
+    "id": 8,
+    "number": 8,
+    "status": "occupied",
+    "seats": 4,
+    "location": "Center",
+    "reservation": {
+      "name": "Alice Johnson",
+      "time": "2023-10-01T18:30:00",
+      "contact": "555-123-4567"
+    }
+  },
+  {
+    "id": 9,
+    "number": 9,
+    "status": "reserved",
+    "seats": 2,
+    "location": "Patio",
+    "reservation": {
+      "name": "Bob Brown",
+      "time": "2023-10-01T19:30:00",
+      "contact": "444-987-6543"
+    }
+  },
+  {
+    "id": 10,
+    "number": 10,
+    "status": "vacant",
+    "seats": 4,
+    "location": "Window",
+    "reservation": null
+  }
+]

@@ -3,6 +3,7 @@
   display: flex;
   width: 100%;
   padding-block: 120px;
+  background-color: $color-background-light;
 
   &.dark {
     background-color: $color-background-dark;

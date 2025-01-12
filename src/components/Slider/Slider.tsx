@@ -7,36 +7,27 @@ const Slider = () => {
     {
       id: 1,
       imgSrc: "images/rooms/room_1.jpg",
-      author: "LUNDEV",
-      title: "DESIGN SLIDER",
-      topic: "ANIMAL",
+      author: "Amaranth",
+      title: "MAIN HALL",
+      topic: "first floor",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
     },
     {
       id: 2,
       imgSrc: "images/rooms/room_2.jpg",
-      author: "LUNDEV",
-      title: "DESIGN SLIDER",
-      topic: "ANIMAL",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
-    },
-    {
-      id: 3,
-      imgSrc: "images/rooms/room_3.jpg",
-      author: "LUNDEV",
-      title: "DESIGN SLIDER",
-      topic: "ANIMAL",
+      author: "Amaranth",
+      title: "MAIN HALL",
+      topic: "second floor",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
     },
     {
       id: 4,
       imgSrc: "images/rooms/room_4.jpg",
-      author: "LUNDEV",
-      title: "DESIGN SLIDER",
-      topic: "ANIMAL",
+      author: "Amaranth",
+      title: "OUTDOOR",
+      topic: "landscape",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi...",
     },
