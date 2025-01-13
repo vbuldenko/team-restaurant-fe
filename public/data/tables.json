@@ -16,7 +16,8 @@
     "reservation": {
       "name": "John Doe",
       "time": "2023-10-01T19:00:00",
-      "contact": "123-456-7890"
+      "contact": "123-456-7890",
+      "guests": 1
     }
   },
   {
@@ -44,7 +45,8 @@
     "reservation": {
       "name": "Jane Smith",
       "time": "2023-10-01T20:00:00",
-      "contact": "987-654-3210"
+      "contact": "987-654-3210",
+      "guests": 2
     }
   },
   {
@@ -72,7 +74,8 @@
     "reservation": {
       "name": "Alice Johnson",
       "time": "2023-10-01T18:30:00",
-      "contact": "555-123-4567"
+      "contact": "555-123-4567",
+      "guests": 4
     }
   },
   {
@@ -84,7 +87,8 @@
     "reservation": {
       "name": "Bob Brown",
       "time": "2023-10-01T19:30:00",
-      "contact": "444-987-6543"
+      "contact": "444-987-6543",
+      "guests": 2
     }
   },
   {

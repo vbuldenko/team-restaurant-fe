@@ -1,20 +1,41 @@
 import classNames from "classnames";
 import "./Table.scss";
 
-const Table = ({ seats, number, status, orientation = "horizontal" }) => {
-  const renderChairs = () => {
+const Table = ({
+  seats,
+  number,
+  status,
+  orientation = "horizontal",
+  reservedSeats = 0,
+}) => {
+  const tableWidth = seats * 40;
+
+  const renderTopChairs = () => {
     const halfSeats = Math.ceil(seats / 2);
     const chairs = [];
     for (let i = 0; i < halfSeats; i++) {
       chairs.push(
-        <div key={`top-${i}`} className="table__chair table__chair--top"></div>
+        <div
+          key={`top-${i}`}
+          className={classNames("table__chair", {
+            "table__chair--reserved": i < reservedSeats,
+          })}
+        ></div>
       );
     }
+    return chairs;
+  };
+
+  const renderBottomChairs = () => {
+    const halfSeats = Math.ceil(seats / 2);
+    const chairs = [];
     for (let i = 0; i < seats - halfSeats; i++) {
       chairs.push(
         <div
           key={`bottom-${i}`}
-          className="table__chair table__chair--bottom"
+          className={classNames("table__chair", "table__chair--bottom", {
+            "table__chair--reserved": i + halfSeats < reservedSeats,
+          })}
         ></div>
       );
     }
@@ -28,11 +49,16 @@ const Table = ({ seats, number, status, orientation = "horizontal" }) => {
         `table--${status}`,
         `table--${orientation}`
       )}
+      style={{ width: `${tableWidth}px` }}
     >
-      <div className="table__chairs">{renderChairs()}</div>
-      <div className="table__desk">
-        <span className="table__number">{number}</span>
+      <div className="table__number">{number}</div>
+      <div className="table__chairs table__chairs--top">
+        {renderTopChairs()}
       </div>
+      <div className="table__chairs table__chairs--bottom">
+        {renderBottomChairs()}
+      </div>
+      <div className="table__status">{status}</div>
     </div>
   );
 };

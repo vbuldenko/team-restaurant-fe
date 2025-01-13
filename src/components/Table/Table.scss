@@ -6,73 +6,80 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
-  margin: 8px;
   text-align: center;
-
-  &--vacant {
-    background-color: #e0ffe0;
-  }
-
-  &--occupied {
-    background-color: #ffe0e0;
-  }
-
-  &--reserved {
-    background-color: #ffffe0;
-  }
-
-  &--horizontal {
-    flex-direction: row;
-  }
+  width: 200px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
 
   &--vertical {
-    flex-direction: column;
-  }
+    transform: rotate(90deg);
 
-  &__chairs {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-  }
-
-  &--horizontal .table__chairs {
-    flex-direction: column;
-  }
-
-  &--vertical .table__chairs {
-    flex-direction: row;
-  }
-
-  &__chair {
-    width: 20px;
-    height: 20px;
-    background-color: #333;
-    border-radius: 50%;
-
-    &--top {
-      margin-bottom: 8px;
+    .table__number {
+      transform: rotate(-90deg);
+      top: auto;
+      bottom: 8px;
+      left: 8px;
     }
 
-    &--bottom {
-      margin-top: 8px;
+    .table__status {
+      transform: rotate(-90deg);
+      bottom: auto;
+      top: 24px;
+      left: 8px;
     }
   }
 
-  &__desk {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    margin: 8px;
+  &--vacant .table__chair {
+    background-color: #ccc;
+  }
+
+  &--occupied .table__chair--reserved {
+    background-color: #47ff7b; /* Adjust color as needed */
+  }
+
+  &--reserved .table__chair--reserved {
+    background-color: #ff6347; /* Adjust color as needed */
   }
 
   &__number {
-    font-size: 1rem;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 1.25rem;
+    color: $color-gray-5;
     font-weight: bold;
+  }
+
+  &__status {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    font-size: 0.875rem;
+    color: $color-gray-5;
+  }
+
+  &__chairs {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__chairs--top {
+    top: -14px;
+  }
+
+  &__chairs--bottom {
+    bottom: -14px;
+  }
+
+  &__chair {
+    width: 40px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 1rem 1rem 0.3rem 0.3rem; /* Semi-spherical shape */
+
+    &--bottom {
+      border-radius: 0.3rem 0.3rem 1rem 1rem; /* Invert semi-spherical shape */
+    }
   }
 }
