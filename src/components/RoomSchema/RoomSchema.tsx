@@ -13,21 +13,18 @@ export default function RoomSchema() {
   }, []);
 
   return (
-    <div>
-      Schema
-      <div className="room-schema">
-        <div className="room-schema__tables">
-          {tables.map((table) => (
-            <Table
-              key={table.id}
-              seats={table.seats}
-              number={table.number}
-              status={table.status}
-              // orientation={table.number % 2 === 0 ? "horizontal" : "vertical"}
-              reservedSeats={table.reservation ? table.reservation.guests : 0}
-            />
-          ))}
-        </div>
+    <div className="room-schema container">
+      <div className="room-schema__tables">
+        {tables.map((table) => (
+          <Table
+            key={table.id}
+            seats={table.seats}
+            number={table.number}
+            status={table.status}
+            // orientation={table.number % 2 === 0 ? "horizontal" : "vertical"}
+            reservedSeats={table.reservation ? table.reservation.guests : 0}
+          />
+        ))}
       </div>
     </div>
   );

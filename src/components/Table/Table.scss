@@ -3,12 +3,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: $border-radius-m;
   padding: 16px;
   text-align: center;
   width: 200px; /* Adjust as needed */
   height: 100px; /* Adjust as needed */
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5rem;
+    height: 100%;
+    border-radius: $border-radius-m 0 0 $border-radius-m;
+    z-index: -1;
+  }
 
   &--vertical {
     transform: rotate(90deg);
@@ -28,22 +39,39 @@
     }
   }
 
+  &--vacant {
+    &::before {
+      background-color: $color-green;
+    }
+  }
   &--vacant .table__chair {
     background-color: #ccc;
   }
 
+  &--occupied {
+    &::before {
+      background-color: $color-red;
+    }
+  }
+
   &--occupied .table__chair--reserved {
-    background-color: #47ff7b; /* Adjust color as needed */
+    background-color: $color-red; /* Adjust color as needed */
+  }
+
+  &--reserved {
+    &::before {
+      background-color: $color-yellow;
+    }
   }
 
   &--reserved .table__chair--reserved {
-    background-color: #ff6347; /* Adjust color as needed */
+    background-color: $color-yellow; /* Adjust color as needed */
   }
 
   &__number {
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 0.5rem;
+    left: 1rem;
     font-size: 1.25rem;
     color: $color-gray-5;
     font-weight: bold;
@@ -51,8 +79,8 @@
 
   &__status {
     position: absolute;
-    bottom: 8px;
-    left: 8px;
+    bottom: 0.5rem;
+    left: 1rem;
     font-size: 0.875rem;
     color: $color-gray-5;
   }

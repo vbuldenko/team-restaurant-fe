@@ -8,7 +8,7 @@ const Table = ({
   orientation = "horizontal",
   reservedSeats = 0,
 }) => {
-  const tableWidth = seats * 40;
+  const tableWidth = seats * 50;
 
   const renderTopChairs = () => {
     const halfSeats = Math.ceil(seats / 2);
