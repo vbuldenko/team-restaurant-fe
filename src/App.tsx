@@ -6,6 +6,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import HomePage from "./pages/Home";
 import MenuPage from "./pages/Menu";
 import ReservationPage from "./pages/Reservation";
+import Login from "./pages/Login";
 
 const MainLayout = () => {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path={Path.Menu} element={<MenuPage />} />
         <Route path={Path.Reservation} element={<ReservationPage />} />
+        <Route path={Path.Login} element={<Login />} />
         {/* <Route path={Path.Menu} element={<MenuPage />}>
           <Route path=":id" element={<DishCard />} />
         </Route> */}

@@ -27,9 +27,9 @@ export const login = createAsyncThunk<
   { rejectValue: ErrorResponse }
 >("auth/login", async (credentials, { dispatch, rejectWithValue }) => {
   try {
-    const { accessToken } = await authService.login(credentials);
-    accessTokenService.save(accessToken);
-    dispatch(fetchUserData());
+    const { token } = await authService.login(credentials);
+    accessTokenService.save(token);
+    // dispatch(fetchUserData());
   } catch (error: any) {
     const message = getErrorMessage(error) || "Unexpected error occurred";
 
