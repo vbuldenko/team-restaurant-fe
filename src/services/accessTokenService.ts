@@ -1,4 +1,4 @@
-const key = "accessToken";
+const key = "raToken";
 
 /**
  * Retrieves the access token from localStorage.

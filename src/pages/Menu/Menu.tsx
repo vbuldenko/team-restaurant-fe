@@ -4,6 +4,7 @@ import "./Menu.scss";
 import { DishCard } from "../../components/DishCard";
 import MenuItemCard from "../../components/MenuItemCard";
 import classNames from "classnames";
+import { menuService } from "../../services/menuService";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -12,16 +13,20 @@ const Menu = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  // useEffect(() => {
+  //   fetch("/data/menu.json")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setMenuItems(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching menu items: ", error);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch("/data/menu.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setMenuItems(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching menu items: ", error);
-      });
+    menuService.getAll().then(console.log);
   }, []);
 
   const handleItemClick = (item) => {

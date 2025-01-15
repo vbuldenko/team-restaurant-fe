@@ -2,7 +2,7 @@ import axiosClient from "../api/axiosClient";
 import { Dish } from "../types/Dish";
 
 function getAll(): Promise<Dish[]> {
-  return axiosClient.get("/dishes?page=0&size=20");
+  return axiosClient.get("/dishes");
 }
 
 function add(newTraining: Partial<Dish>): Promise<Dish> {
