@@ -17,13 +17,13 @@ interface ResetData {
 }
 
 function register(credentials: AuthCredentials) {
-  return authClient.post("/registration", credentials);
+  return authClient.post("/auth/registration", credentials);
 }
 
 function login(
   credentials: Partial<AuthCredentials>
 ): Promise<LoginReturnData> {
-  return authClient.post("/api/auth/login", credentials);
+  return authClient.post("/auth/login", credentials);
 }
 
 /**
@@ -34,7 +34,7 @@ function loginGoogle(): void {
 }
 
 function loginGoogleFireBase(idToken: string) {
-  return authClient.post("/api/auth/google", { idToken });
+  return authClient.post("/auth/google", { idToken });
 }
 
 function logout() {
