@@ -1,418 +1,624 @@
 [
   {
     "id": 1,
-    "type": "Food",
     "name": "Margherita Pizza",
     "description": "Classic pizza with fresh tomatoes, mozzarella cheese, and basil.",
     "price": 10.99,
-    "category": "Pizza",
-    "ingredients": ["Tomatoes", "Mozzarella", "Basil"],
+    "dishCategory": {
+      "id": 2,
+      "name": "Vegetarian",
+      "description": "Dishes that are entirely plant-based, without meat or fish."
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "name": "Tomato"
+      },
+      {
+        "id": 2,
+        "name": "Cucumber"
+      }
+    ],
     "calories": 300,
     "weight": 400,
     "available": true,
-    "image_url": "/images/menu/breakfast.jpg",
-    "preparation_time": 15,
-    "likes": 150,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/breakfast.jpg",
+    "preparationTime": 15,
+    "suggestedDrinks": [
+      {
+        "id": 2,
+        "name": "Water",
+        "price": 1.5,
+        "description": "A refreshing bottle of water.",
+        "volume": 500,
+        "available": true,
+        "alcoholPercentage": 0.0,
+        "calories": 0,
+        "imageUrl": "/images/water.jpg",
+        "drinkCategory": {
+          "id": 2,
+          "name": "Non-Alcoholic",
+          "description": "Drinks that do not contain alcohol, such as juices, water, and sodas."
+        },
+        "countLikes": 1
+      }
+    ],
+    "countLikes": 150
   },
   {
     "id": 2,
-    "type": "Food",
     "name": "Spaghetti Carbonara",
     "description": "Traditional Italian pasta with eggs, cheese, pancetta, and pepper.",
     "price": 12.99,
-    "category": "Pasta",
-    "ingredients": ["Spaghetti", "Eggs", "Cheese", "Pancetta", "Pepper"],
+    "dishCategory": {
+      "id": 3,
+      "name": "Pasta",
+      "description": "Various types of pasta dishes."
+    },
+    "ingredients": [
+      {
+        "id": 3,
+        "name": "Spaghetti"
+      },
+      {
+        "id": 4,
+        "name": "Eggs"
+      },
+      {
+        "id": 5,
+        "name": "Cheese"
+      },
+      {
+        "id": 6,
+        "name": "Pancetta"
+      },
+      {
+        "id": 7,
+        "name": "Pepper"
+      }
+    ],
     "calories": 450,
     "weight": 350,
     "available": true,
-    "image_url": "/images/menu/breakfast2.jpg",
-    "preparation_time": 20,
-    "likes": 200,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/breakfast2.jpg",
+    "preparationTime": 20,
+    "suggestedDrinks": [],
+    "countLikes": 200
   },
   {
     "id": 3,
-    "type": "Food",
     "name": "Lasagna",
     "description": "Layered pasta with meat sauce, ricotta, and mozzarella cheese.",
     "price": 13.99,
-    "category": "Pasta",
-    "ingredients": ["Pasta", "Meat Sauce", "Ricotta", "Mozzarella"],
+    "dishCategory": {
+      "id": 3,
+      "name": "Pasta",
+      "description": "Various types of pasta dishes."
+    },
+    "ingredients": [
+      {
+        "id": 8,
+        "name": "Pasta"
+      },
+      {
+        "id": 9,
+        "name": "Meat Sauce"
+      },
+      {
+        "id": 10,
+        "name": "Ricotta"
+      },
+      {
+        "id": 11,
+        "name": "Mozzarella"
+      }
+    ],
     "calories": 600,
     "weight": 500,
     "available": true,
-    "image_url": "/images/menu/breakfast3.jpg",
-    "preparation_time": 30,
-    "likes": 250,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/breakfast3.jpg",
+    "preparationTime": 30,
+    "suggestedDrinks": [],
+    "countLikes": 250
   },
   {
     "id": 4,
-    "type": "Food",
     "name": "Caprese Salad",
     "description": "Fresh tomatoes, mozzarella, and basil drizzled with balsamic glaze.",
     "price": 8.99,
-    "category": "Salad",
-    "ingredients": ["Tomatoes", "Mozzarella", "Basil", "Balsamic Glaze"],
+    "dishCategory": {
+      "id": 4,
+      "name": "Salad",
+      "description": "Various types of salads."
+    },
+    "ingredients": [
+      {
+        "id": 12,
+        "name": "Tomatoes"
+      },
+      {
+        "id": 11,
+        "name": "Mozzarella"
+      },
+      {
+        "id": 13,
+        "name": "Basil"
+      },
+      {
+        "id": 14,
+        "name": "Balsamic Glaze"
+      }
+    ],
     "calories": 200,
     "weight": 250,
     "available": true,
-    "image_url": "/images/menu/salad1.jpg",
-    "preparation_time": 10,
-    "likes": 100,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/salad1.jpg",
+    "preparationTime": 10,
+    "suggestedDrinks": [],
+    "countLikes": 100
   },
   {
     "id": 5,
-    "type": "Food",
     "name": "Tiramisu",
     "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.",
     "price": 6.99,
-    "category": "Dessert",
-    "ingredients": ["Ladyfingers", "Coffee", "Mascarpone", "Cocoa Powder"],
+    "dishCategory": {
+      "id": 5,
+      "name": "Dessert",
+      "description": "Various types of desserts."
+    },
+    "ingredients": [
+      {
+        "id": 15,
+        "name": "Ladyfingers"
+      },
+      {
+        "id": 16,
+        "name": "Coffee"
+      },
+      {
+        "id": 17,
+        "name": "Mascarpone"
+      },
+      {
+        "id": 18,
+        "name": "Cocoa Powder"
+      }
+    ],
     "calories": 400,
     "weight": 200,
     "available": true,
-    "image_url": "/images/menu/salad2.jpg",
-    "preparation_time": 15,
-    "likes": 180,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/salad2.jpg",
+    "preparationTime": 15,
+    "suggestedDrinks": [],
+    "countLikes": 180
   },
   {
     "id": 6,
-    "type": "Food",
     "name": "Bruschetta",
     "description": "Grilled bread topped with fresh tomatoes, garlic, and basil.",
     "price": 7.99,
-    "category": "Appetizer",
-    "ingredients": ["Bread", "Tomatoes", "Garlic", "Basil"],
+    "dishCategory": {
+      "id": 6,
+      "name": "Appetizer",
+      "description": "Various types of appetizers."
+    },
+    "ingredients": [
+      {
+        "id": 19,
+        "name": "Bread"
+      },
+      {
+        "id": 12,
+        "name": "Tomatoes"
+      },
+      {
+        "id": 20,
+        "name": "Garlic"
+      },
+      {
+        "id": 13,
+        "name": "Basil"
+      }
+    ],
     "calories": 250,
     "weight": 150,
     "available": true,
-    "image_url": "/images/menu/salad3.jpg",
-    "preparation_time": 10,
-    "likes": 120,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/salad3.jpg",
+    "preparationTime": 10,
+    "suggestedDrinks": [],
+    "countLikes": 120
   },
   {
     "id": 7,
-    "type": "Food",
     "name": "Fettuccine Alfredo",
     "description": "Creamy pasta with butter, cream, and Parmesan cheese.",
     "price": 11.99,
-    "category": "Pasta",
-    "ingredients": ["Fettuccine", "Butter", "Cream", "Parmesan"],
+    "dishCategory": {
+      "id": 3,
+      "name": "Pasta",
+      "description": "Various types of pasta dishes."
+    },
+    "ingredients": [
+      {
+        "id": 21,
+        "name": "Fettuccine"
+      },
+      {
+        "id": 22,
+        "name": "Butter"
+      },
+      {
+        "id": 23,
+        "name": "Cream"
+      },
+      {
+        "id": 24,
+        "name": "Parmesan"
+      }
+    ],
     "calories": 500,
     "weight": 400,
     "available": true,
-    "image_url": "/images/menu/salad4.jpg",
-    "preparation_time": 20,
-    "likes": 170,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/salad4.jpg",
+    "preparationTime": 20,
+    "suggestedDrinks": [],
+    "countLikes": 170
   },
   {
     "id": 8,
-    "type": "Food",
     "name": "Minestrone Soup",
     "description": "Hearty vegetable soup with beans, pasta, and tomatoes.",
     "price": 9.99,
-    "category": "Soup",
-    "ingredients": ["Vegetables", "Beans", "Pasta", "Tomatoes"],
+    "dishCategory": {
+      "id": 7,
+      "name": "Soup",
+      "description": "Various types of soups."
+    },
+    "ingredients": [
+      {
+        "id": 25,
+        "name": "Vegetables"
+      },
+      {
+        "id": 26,
+        "name": "Beans"
+      },
+      {
+        "id": 21,
+        "name": "Pasta"
+      },
+      {
+        "id": 27,
+        "name": "Tomatoes"
+      }
+    ],
     "calories": 300,
     "weight": 350,
     "available": true,
-    "image_url": "/images/menu/vegetables.jpg",
-    "preparation_time": 25,
-    "likes": 130,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/vegetables.jpg",
+    "preparationTime": 25,
+    "suggestedDrinks": [],
+    "countLikes": 130
   },
   {
     "id": 9,
-    "type": "Food",
     "name": "Risotto",
     "description": "Creamy rice dish with Parmesan cheese and mushrooms.",
     "price": 12.99,
-    "category": "Main Course",
-    "ingredients": ["Rice", "Parmesan", "Mushrooms"],
+    "dishCategory": {
+      "id": 8,
+      "name": "Main Course",
+      "description": "Various types of main courses."
+    },
+    "ingredients": [
+      {
+        "id": 28,
+        "name": "Rice"
+      },
+      {
+        "id": 24,
+        "name": "Parmesan"
+      },
+      {
+        "id": 29,
+        "name": "Mushrooms"
+      }
+    ],
     "calories": 400,
     "weight": 300,
     "available": true,
-    "image_url": "/images/menu/pasta1.jpg",
-    "preparation_time": 30,
-    "likes": 160,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/pasta1.jpg",
+    "preparationTime": 30,
+    "suggestedDrinks": [],
+    "countLikes": 160
   },
   {
     "id": 10,
-    "type": "Food",
     "name": "Panna Cotta",
     "description": "Creamy dessert topped with berry sauce.",
     "price": 5.99,
-    "category": "Dessert",
-    "ingredients": ["Cream", "Sugar", "Vanilla", "Berry Sauce"],
+    "dishCategory": {
+      "id": 5,
+      "name": "Dessert",
+      "description": "Various types of desserts."
+    },
+    "ingredients": [
+      {
+        "id": 23,
+        "name": "Cream"
+      },
+      {
+        "id": 30,
+        "name": "Sugar"
+      },
+      {
+        "id": 31,
+        "name": "Vanilla"
+      },
+      {
+        "id": 32,
+        "name": "Berry Sauce"
+      }
+    ],
     "calories": 350,
     "weight": 150,
     "available": true,
-    "image_url": "/images/menu/pasta2.jpg",
-    "preparation_time": 15,
-    "likes": 140,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/menu/pasta2.jpg",
+    "preparationTime": 15,
+    "suggestedDrinks": [],
+    "countLikes": 140
   },
   {
     "id": 11,
-    "type": "Food",
     "name": "Gnocchi",
     "description": "Potato dumplings served with marinara sauce.",
     "price": 10.99,
-    "category": "Main Course",
-    "ingredients": ["Potatoes", "Flour", "Marinara Sauce"],
+    "dishCategory": {
+      "id": 8,
+      "name": "Main Course",
+      "description": "Various types of main courses."
+    },
+    "ingredients": [
+      {
+        "id": 33,
+        "name": "Potatoes"
+      },
+      {
+        "id": 34,
+        "name": "Flour"
+      },
+      {
+        "id": 35,
+        "name": "Marinara Sauce"
+      }
+    ],
     "calories": 400,
     "weight": 300,
     "available": true,
-    "image_url": "/images/gnocchi.jpg",
-    "preparation_time": 20,
-    "likes": 150,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/gnocchi.jpg",
+    "preparationTime": 20,
+    "suggestedDrinks": [],
+    "countLikes": 150
   },
   {
     "id": 12,
-    "type": "Food",
     "name": "Chicken Parmesan",
     "description": "Breaded chicken breast topped with marinara sauce and mozzarella cheese.",
     "price": 14.99,
-    "category": "Main Course",
-    "ingredients": ["Chicken Breast", "Marinara Sauce", "Mozzarella"],
+    "dishCategory": {
+      "id": 8,
+      "name": "Main Course",
+      "description": "Various types of main courses."
+    },
+    "ingredients": [
+      {
+        "id": 36,
+        "name": "Chicken Breast"
+      },
+      {
+        "id": 35,
+        "name": "Marinara Sauce"
+      },
+      {
+        "id": 11,
+        "name": "Mozzarella"
+      }
+    ],
     "calories": 600,
     "weight": 400,
     "available": true,
-    "image_url": "/images/chicken-parmesan.jpg",
-    "preparation_time": 25,
-    "likes": 180,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/chicken-parmesan.jpg",
+    "preparationTime": 25,
+    "suggestedDrinks": [],
+    "countLikes": 180
   },
   {
     "id": 13,
-    "type": "Food",
     "name": "Calamari",
     "description": "Fried squid rings served with marinara sauce.",
     "price": 11.99,
-    "category": "Appetizer",
-    "ingredients": ["Squid", "Flour", "Marinara Sauce"],
+    "dishCategory": {
+      "id": 6,
+      "name": "Appetizer",
+      "description": "Various types of appetizers."
+    },
+    "ingredients": [
+      {
+        "id": 37,
+        "name": "Squid"
+      },
+      {
+        "id": 34,
+        "name": "Flour"
+      },
+      {
+        "id": 35,
+        "name": "Marinara Sauce"
+      }
+    ],
     "calories": 350,
     "weight": 250,
     "available": true,
-    "image_url": "/images/calamari.jpg",
-    "preparation_time": 15,
-    "likes": 140,
-    "suggestions": [14, 15, 16]
+    "imageUrl": "/images/calamari.jpg",
+    "preparationTime": 15,
+    "suggestedDrinks": [],
+    "countLikes": 140
   },
   {
     "id": 14,
-    "type": "Beverage",
     "name": "Red Wine",
     "description": "A glass of fine Italian red wine.",
     "price": 8.99,
-    "category": "Wine",
-    "ingredients": ["Grapes"],
+    "dishCategory": {
+      "id": 9,
+      "name": "Wine",
+      "description": "Various types of wines."
+    },
+    "ingredients": [
+      {
+        "id": 38,
+        "name": "Grapes"
+      }
+    ],
     "calories": 120,
     "weight": 150,
     "available": true,
-    "image_url": "/images/red-wine.jpg",
-    "preparation_time": 0,
-    "likes": 200,
-    "suggestions": []
+    "imageUrl": "/images/red-wine.jpg",
+    "preparationTime": 0,
+    "suggestedDrinks": [],
+    "countLikes": 200
   },
   {
     "id": 15,
-    "type": "Beverage",
     "name": "White Wine",
     "description": "A glass of fine Italian white wine.",
     "price": 8.99,
-    "category": "Wine",
-    "ingredients": ["Grapes"],
+    "dishCategory": {
+      "id": 9,
+      "name": "Wine",
+      "description": "Various types of wines."
+    },
+    "ingredients": [
+      {
+        "id": 38,
+        "name": "Grapes"
+      }
+    ],
     "calories": 120,
     "weight": 150,
     "available": true,
-    "image_url": "/images/white-wine.jpg",
-    "preparation_time": 0,
-    "likes": 180,
-    "suggestions": []
+    "imageUrl": "/images/white-wine.jpg",
+    "preparationTime": 0,
+    "suggestedDrinks": [],
+    "countLikes": 180
   },
   {
     "id": 16,
-    "type": "Beverage",
     "name": "Prosecco",
     "description": "A glass of sparkling Italian Prosecco.",
     "price": 9.99,
-    "category": "Wine",
-    "ingredients": ["Grapes"],
+    "dishCategory": {
+      "id": 9,
+      "name": "Wine",
+      "description": "Various types of wines."
+    },
+    "ingredients": [
+      {
+        "id": 38,
+        "name": "Grapes"
+      }
+    ],
     "calories": 100,
     "weight": 150,
     "available": true,
-    "image_url": "/images/prosecco.jpg",
-    "preparation_time": 0,
-    "likes": 190,
-    "suggestions": []
+    "imageUrl": "/images/prosecco.jpg",
+    "preparationTime": 0,
+    "suggestedDrinks": [],
+    "countLikes": 190
   },
   {
     "id": 17,
-    "type": "Beverage",
     "name": "Espresso",
     "description": "A shot of strong Italian espresso.",
     "price": 2.99,
-    "category": "Coffee",
-    "ingredients": ["Coffee Beans"],
+    "dishCategory": {
+      "id": 10,
+      "name": "Coffee",
+      "description": "Various types of coffee."
+    },
+    "ingredients": [
+      {
+        "id": 39,
+        "name": "Coffee Beans"
+      }
+    ],
     "calories": 5,
     "weight": 50,
     "available": true,
-    "image_url": "/images/espresso.jpg",
-    "preparation_time": 5,
-    "likes": 220,
-    "suggestions": []
+    "imageUrl": "/images/espresso.jpg",
+    "preparationTime": 5,
+    "suggestedDrinks": [],
+    "countLikes": 220
   },
   {
     "id": 18,
-    "type": "Beverage",
     "name": "Cappuccino",
     "description": "A cup of Italian cappuccino with steamed milk foam.",
     "price": 3.99,
-    "category": "Coffee",
-    "ingredients": ["Coffee Beans", "Milk"],
+    "dishCategory": {
+      "id": 10,
+      "name": "Coffee",
+      "description": "Various types of coffee."
+    },
+    "ingredients": [
+      {
+        "id": 39,
+        "name": "Coffee Beans"
+      },
+      {
+        "id": 40,
+        "name": "Milk"
+      }
+    ],
     "calories": 80,
     "weight": 200,
     "available": true,
-    "image_url": "/images/cappuccino.jpg",
-    "preparation_time": 5,
-    "likes": 210,
-    "suggestions": []
+    "imageUrl": "/images/cappuccino.jpg",
+    "preparationTime": 5,
+    "suggestedDrinks": [],
+    "countLikes": 210
   },
   {
     "id": 19,
-    "type": "Beverage",
     "name": "Limoncello",
     "description": "A glass of traditional Italian lemon liqueur.",
     "price": 5.99,
-    "category": "Liqueur",
-    "ingredients": ["Lemon", "Alcohol", "Sugar"],
+    "dishCategory": {
+      "id": 11,
+      "name": "Liqueur",
+      "description": "Various types of liqueurs."
+    },
+    "ingredients": [
+      {
+        "id": 41,
+        "name": "Lemon"
+      },
+      {
+        "id": 42,
+        "name": "Alcohol"
+      },
+      {
+        "id": 30,
+        "name": "Sugar"
+      }
+    ],
     "calories": 150,
     "weight": 100,
     "available": true,
-    "image_url": "/images/limoncello.jpg",
-    "preparation_time": 0,
-    "likes": 170,
-    "suggestions": []
-  },
-  {
-    "id": 20,
-    "type": "Beverage",
-    "name": "Aperol Spritz",
-    "description": "A refreshing cocktail with Aperol, Prosecco, and soda water.",
-    "price": 7.99,
-    "category": "Cocktail",
-    "ingredients": ["Aperol", "Prosecco", "Soda Water"],
-    "calories": 200,
-    "weight": 250,
-    "available": true,
-    "image_url": "/images/aperol-spritz.jpg",
-    "preparation_time": 5,
-    "likes": 230,
-    "suggestions": []
-  },
-  {
-    "id": 21,
-    "type": "Beverage",
-    "name": "Negroni",
-    "description": "A classic Italian cocktail with gin, vermouth, and Campari.",
-    "price": 8.99,
-    "category": "Cocktail",
-    "ingredients": ["Gin", "Vermouth", "Campari"],
-    "calories": 180,
-    "weight": 200,
-    "available": true,
-    "image_url": "/images/negroni.jpg",
-    "preparation_time": 5,
-    "likes": 240,
-    "suggestions": []
-  },
-  {
-    "id": 22,
-    "type": "Beverage",
-    "name": "Bellini",
-    "description": "A refreshing cocktail with Prosecco and peach puree.",
-    "price": 7.99,
-    "category": "Cocktail",
-    "ingredients": ["Prosecco", "Peach Puree"],
-    "calories": 150,
-    "weight": 200,
-    "available": true,
-    "image_url": "/images/bellini.jpg",
-    "preparation_time": 5,
-    "likes": 220,
-    "suggestions": []
-  },
-  {
-    "id": 23,
-    "type": "Beverage",
-    "name": "Americano",
-    "description": "A classic Italian cocktail with Campari, vermouth, and soda water.",
-    "price": 7.99,
-    "category": "Cocktail",
-    "ingredients": ["Campari", "Vermouth", "Soda Water"],
-    "calories": 150,
-    "weight": 200,
-    "available": true,
-    "image_url": "/images/americano.jpg",
-    "preparation_time": 5,
-    "likes": 210,
-    "suggestions": []
-  },
-  {
-    "id": 24,
-    "type": "Beverage",
-    "name": "Chianti",
-    "description": "A glass of fine Italian Chianti wine.",
-    "price": 9.99,
-    "category": "Wine",
-    "ingredients": ["Grapes"],
-    "calories": 120,
-    "weight": 150,
-    "available": true,
-    "image_url": "/images/chianti.jpg",
-    "preparation_time": 0,
-    "likes": 200,
-    "suggestions": []
-  },
-  {
-    "id": 25,
-    "type": "Beverage",
-    "name": "San Pellegrino",
-    "description": "A bottle of sparkling mineral water.",
-    "price": 2.99,
-    "category": "Water",
-    "ingredients": ["Mineral Water"],
-    "calories": 0,
-    "weight": 500,
-    "available": true,
-    "image_url": "/images/san-pellegrino.jpg",
-    "preparation_time": 0,
-    "likes": 180,
-    "suggestions": []
-  },
-  {
-    "id": 26,
-    "type": "Beverage",
-    "name": "Aranciata",
-    "description": "A bottle of sparkling orange beverage.",
-    "price": 2.99,
-    "category": "Soft Drink",
-    "ingredients": ["Orange Juice", "Carbonated Water", "Sugar"],
-    "calories": 100,
-    "weight": 330,
-    "available": true,
-    "image_url": "/images/aranciata.jpg",
-    "preparation_time": 0,
-    "likes": 170,
-    "suggestions": []
+    "imageUrl": "/images/limoncello.jpg",
+    "preparationTime": 0,
+    "suggestedDrinks": [],
+    "countLikes": 170
   }
 ]

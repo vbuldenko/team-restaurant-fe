@@ -13,9 +13,21 @@ const Menu = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  useEffect(() => {
+    fetch("/data/menu.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setMenuItems(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching menu items: ", error);
+      });
+  }, []);
+
   // useEffect(() => {
-  //   fetch("/data/menu.json")
-  //     .then((response) => response.json())
+  //   menuService
+  //     .getAll()
   //     .then((data) => {
   //       setMenuItems(data);
   //       setLoading(false);
@@ -24,10 +36,6 @@ const Menu = () => {
   //       console.error("Error fetching menu items: ", error);
   //     });
   // }, []);
-
-  useEffect(() => {
-    menuService.getAll().then(console.log);
-  }, []);
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
@@ -41,11 +49,9 @@ const Menu = () => {
   const uniqueCategories = [
     "All",
     ...new Set(
-      menuItems
-        .filter((item) => item.type === "Food")
-        .map((item) => {
-          return item.category;
-        })
+      menuItems.map((item) => {
+        return item.dishCategory.name;
+      })
     ),
   ];
 
@@ -53,7 +59,7 @@ const Menu = () => {
 
   if (selectedCategory !== "All") {
     filteredMenuItems = menuItems.filter(
-      (item) => item.category === selectedCategory
+      (item) => item.dishCategory.name === selectedCategory
     );
     // setSelectedItem(filteredMenuItems[0]);
   }

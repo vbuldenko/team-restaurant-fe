@@ -58,8 +58,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MmY5NGEwY
 ###
 GET http://ec2-50-19-185-92.compute-1.amazonaws.com/api/dishes
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJib2Iuam9uZXNAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzYxNTYxMzMsImV4cCI6MTczNjE1OTEzM30.gUP0RUbXFFCrXHSoYGGJoPqWZPQ9pJeoLV6h2XN5nNV2l6sxCGzt0jOXT4nKPiGN
-
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJib2Iuam9uZXNAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzY5NDE3MjgsImV4cCI6MTczNjk0NDcyOH0.usxU2ZZSCqVUZ6EW8wShba-YQmOb2gGfGCes_DakjsdLNa0yE3R_LvB75yQXILn7
 ###
 
 # --------------------------------------------------------TRAININGS

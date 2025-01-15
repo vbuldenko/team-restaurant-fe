@@ -55,7 +55,7 @@ export const DishCard = ({ item, backHandler }) => {
         {/* <p className="dish__category">{item.category}</p> */}
         <div className="dish__info-item">
           <HeartIcon className="h-5 w-5" />
-          <span>{item.likes}</span>
+          <span>{item.countLikes}</span>
         </div>
         <div className="dish__info-item">
           <FireIcon className="h-5 w-5" />
@@ -67,7 +67,7 @@ export const DishCard = ({ item, backHandler }) => {
         </div>
         <div className="dish__info-item">
           <ClockIcon className="h-5 w-5" />
-          <span>{item.preparation_time} min</span>
+          <span>{item.preparationTime} min</span>
         </div>
         <div className="dish__info-item">
           <BanknotesIcon className="h-5 w-5" />
@@ -75,7 +75,7 @@ export const DishCard = ({ item, backHandler }) => {
         </div>
       </div>
       <div className="dish__image-container">
-        <img src={item.image_url} alt={item.name} className="dish__image" />
+        <img src={item.imageUrl} alt={item.name} className="dish__image" />
       </div>
       <p className="dish__description">{item.description}</p>
       <div className="dish__suggestion suggestion">

@@ -16,12 +16,12 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
     id,
     name,
     description,
-    category,
+    dishCategory,
     price,
-    image_url,
+    imageUrl,
     weight,
     calories,
-    likes,
+    countLikes,
   } = data;
   return (
     // <NavLink to={id.toString()}>
@@ -40,7 +40,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
         </span>
       </div> */}
       <div className="menu-item__image-container">
-        <img src={image_url} alt={name} className="menu-item__image" />
+        <img src={imageUrl} alt={name} className="menu-item__image" />
       </div>
       <div className="menu-item__content">
         <h3 className="menu-item__name">{name}</h3>
