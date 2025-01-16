@@ -68,10 +68,10 @@ async function onResponseError(error: AxiosError): Promise<any> {
   isRefreshing = true;
 
   try {
-    const { accessToken } = await authService.refresh();
-    accessTokenService.save(accessToken);
+    const { token } = await authService.refresh();
+    accessTokenService.save(token);
 
-    processQueue(null, accessToken); // Retry all queued requests with the new token
+    processQueue(null, token); // Retry all queued requests with the new token
     return axiosClient.request(originalRequest); // Retry the original request
   } catch (refreshError: any) {
     processQueue(refreshError, null);
