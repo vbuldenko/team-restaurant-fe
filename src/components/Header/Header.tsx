@@ -6,7 +6,7 @@ import CustomSelect from "../CustomSelect";
 import { MenuButton } from "../MenuButton";
 import "./Header.scss";
 import { useAppSelector } from "../../app/hooks";
-import { selectAuth } from "../../features/auth/authSlice";
+import { selectAuth } from "../../app/features/auth/authSlice";
 import { Path } from "../../types/Path";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router";

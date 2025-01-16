@@ -1,5 +1,4 @@
 import { authClient } from "../api/authClient";
-import { LoginReturnData } from "../types/User";
 
 interface AuthCredentials {
   email: string;
@@ -14,6 +13,10 @@ interface ResetPasswordData {
 
 interface ResetData {
   email: string;
+}
+
+interface LoginReturnData {
+  token: string;
 }
 
 function register(credentials: AuthCredentials) {
@@ -42,10 +45,10 @@ function logout() {
 }
 
 function activate(activationToken: string): Promise<LoginReturnData> {
-  return authClient.get(`/activation/${activationToken}`);
+  return authClient.get(`/activate/${activationToken}`);
 }
 
-function refresh(): Promise<{ accessToken: string; userData: any }> {
+function refresh(): Promise<LoginReturnData> {
   return authClient.get("/refresh");
 }
 

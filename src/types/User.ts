@@ -1,4 +1,5 @@
-import { UserDTO } from "./UserDTO";
+import { Order } from "./Order";
+import { Reservation } from "./Reservation";
 
 export interface User {
   id: number;
@@ -7,14 +8,8 @@ export interface User {
   email: string;
   phone: string;
   password: string;
-  role: "client" | "admin";
-  // settings: { fontSize: number };
-  createdAt: Date;
-  updatedAt: Date;
-  activationToken: string | null;
-}
-
-export interface LoginReturnData {
-  user: UserDTO;
-  accessToken: string;
+  isAdmin: boolean;
+  isActivated: boolean;
+  reservations: Reservation[];
+  orders: Order[];
 }

@@ -1,29 +1,28 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { authService } from "../../services/authService";
-import { accessTokenService } from "../../services/accessTokenService";
+import { authService } from "../../../services/authService";
+import { accessTokenService } from "../../../services/accessTokenService";
 import { fetchUserData } from "../user/userThunk";
-import { ErrorResponse } from "../../types/Error";
-import { getErrorMessage } from "../../utils";
+import { ErrorResponse } from "../../../types/Error";
+import { getErrorMessage } from "../../../utils";
 import { setError } from "./authSlice";
 
 export const checkAuth = createAsyncThunk<
   void, // Return type of the successful request
   void, // Argument type
   { rejectValue: ErrorResponse } // Type for rejected value
->("auth/checkAuth", async (_, { rejectWithValue }) => {
+>("auth/check", async (_, { rejectWithValue }) => {
   try {
-    const { accessToken } = await authService.refresh();
-    accessTokenService.save(accessToken);
+    const { token } = await authService.refresh();
+    accessTokenService.save(token);
   } catch (error: any) {
     accessTokenService.remove();
-    const message = getErrorMessage(error) || "Unexpected error occurred";
-    return rejectWithValue({ message });
+    return rejectWithValue({ message: getErrorMessage(error) });
   }
 });
 
 export const login = createAsyncThunk<
   void,
-  { identifier: string; password: string },
+  { email: string; password: string },
   { rejectValue: ErrorResponse }
 >("auth/login", async (credentials, { dispatch, rejectWithValue }) => {
   try {
@@ -31,11 +30,8 @@ export const login = createAsyncThunk<
     accessTokenService.save(token);
     // dispatch(fetchUserData());
   } catch (error: any) {
-    const message = getErrorMessage(error) || "Unexpected error occurred";
-
     setTimeout(() => dispatch(setError(null)), 2000);
-
-    return rejectWithValue({ message });
+    return rejectWithValue({ message: getErrorMessage(error) });
   }
 });
 
@@ -45,13 +41,11 @@ export const activate = createAsyncThunk<
   { rejectValue: ErrorResponse }
 >("auth/activation", async (activationToken, { dispatch, rejectWithValue }) => {
   try {
-    const { accessToken } = await authService.activate(activationToken);
-    accessTokenService.save(accessToken);
+    const { token } = await authService.activate(activationToken);
+    accessTokenService.save(token);
     dispatch(fetchUserData());
   } catch (error: any) {
-    const message = getErrorMessage(error) || "Unexpected error occurred";
-
-    return rejectWithValue({ message });
+    return rejectWithValue({ message: getErrorMessage(error) });
   }
 });
 
@@ -64,10 +58,7 @@ export const logOut = createAsyncThunk<
     accessTokenService.remove();
     await authService.logout();
   } catch (error: any) {
-    const message = getErrorMessage(error) || "Unexpected error occurred";
-
     setTimeout(() => dispatch(setError(null)), 3000);
-
-    return rejectWithValue({ message });
+    return rejectWithValue({ message: getErrorMessage(error) });
   }
 });
