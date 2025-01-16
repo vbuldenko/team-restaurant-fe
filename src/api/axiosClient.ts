@@ -14,7 +14,7 @@ axiosClient.interceptors.request.use(onRequest);
 axiosClient.interceptors.response.use(onResponseSuccess, onResponseError);
 
 function onRequest(request: InternalAxiosRequestConfig<any>) {
-  const token = localStorage.getItem("raToken");
+  const token = accessTokenService.get();
   if (token) {
     request.headers["Authorization"] = `Bearer ${token}`;
   }
