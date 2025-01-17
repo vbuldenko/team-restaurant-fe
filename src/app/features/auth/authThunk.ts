@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { authService } from "../../../services/authService";
 import { accessTokenService } from "../../../services/accessTokenService";
-import { fetchUserData } from "../user/userThunk";
 import { ErrorResponse } from "../../../types/Error";
 import { getErrorMessage } from "../../../utils";
 import { setError } from "./authSlice";
@@ -43,7 +42,7 @@ export const activate = createAsyncThunk<
   try {
     const { token } = await authService.activate(activationToken);
     accessTokenService.save(token);
-    dispatch(fetchUserData());
+    // dispatch(fetchUserData());
   } catch (error: any) {
     return rejectWithValue({ message: getErrorMessage(error) });
   }

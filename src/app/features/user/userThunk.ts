@@ -31,7 +31,7 @@ export const login = createAsyncThunk<
     accessTokenService.save(token);
     return await userService.getProfile();
   } catch (error: any) {
-    setTimeout(() => dispatch(setError(null)), 2000);
+    // setTimeout(() => dispatch(setError(null)), 3000);
     return rejectWithValue({ message: getErrorMessage(error) });
   }
 });

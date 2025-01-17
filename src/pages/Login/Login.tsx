@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectAuth } from "../../app/features/auth/authSlice";
-import { login } from "../../app/features/auth/authThunk";
+import { login } from "../../app/features/user/userThunk";
 import { Path } from "../../types/Path";
 import "./Auth.scss";
-// import Notification from "../../components/Elements/Notification";
+import Notification from "../../components/Notification";
 import { useTranslation } from "react-i18next";
+import { selectUser } from "../../app/features/user/userSlice";
 
 const Login = () => {
   const { t } = useTranslation();
-  // const navigate = useNavigate();
-  const [identifier, setIdentifier] = useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const { isAuthenticated, error } = useAppSelector(selectAuth);
+  const { isAuthenticated, error } = useAppSelector(selectUser);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const dispatch = useAppDispatch();
   // const location = useLocation();
@@ -22,33 +22,39 @@ const Login = () => {
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
-    await dispatch(login({ email: identifier, password }));
+    await dispatch(login({ email, password }));
     setIsSubmitting(false);
     // setIdentifier("");
     // setPassword("");
     // navigate(path, { replace: true });
   };
 
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     navigate(path, { replace: true });
-  //   }
-  // }, [isAuthenticated, navigate, path]);
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/account", { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className="auth__form-wrapper card-element ">
       <form className="auth__form" onSubmit={handleLogin}>
         <h2 className="auth__title">{t("login.title")}</h2>
-        {/* {error && <Notification message={error} type="error" />} */}
+        {error && (
+          <Notification
+            className="notification--error"
+            message={error}
+            type="error"
+          />
+        )}
         <div className="auth__input-wrapper">
           {/* <label htmlFor="identifier">Email or Phone Number</label> */}
           <input
-            id="identifier"
+            id="email"
             type="text"
-            value={identifier}
-            name="identifier"
+            value={email}
+            name="email"
             placeholder={t("login.identifierPlaceholder")}
-            onChange={({ target }) => setIdentifier(target.value)}
+            onChange={({ target }) => setEmail(target.value)}
           />
         </div>
         <div className="auth__input-wrapper">
